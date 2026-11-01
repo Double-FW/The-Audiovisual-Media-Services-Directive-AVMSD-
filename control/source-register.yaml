@@ -1,0 +1,288 @@
+version: 0.1.0
+review_date: '2026-11-01'
+retrieval_policy: Only adopted current units support drafting. partial_official_index
+  and navigation_verified require complete primary-source review before affected operational
+  conclusions. No approved operational sources asserted.
+sources:
+- id: L01
+  title: Directive 2010/13/EU consolidated 2025-02-08
+  authority_type: law
+  url: https://eur-lex.europa.eu/eli/dir/2010/13/2025-02-08/eng
+  version: '2025-02-08'
+  status: partial_official_index
+  review_date: '2026-11-01'
+  reviewed_units: Articles 1–7, 13, 28a–28b; navigation to other provisions
+  limitations: Full direct text blocked by verification wall; exact national implementation
+    not supplied.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: L02
+  title: Directive (EU) 2018/1808
+  authority_type: law
+  url: https://eur-lex.europa.eu/eli/dir/2018/1808/oj/eng
+  version: OJ L 303, 28.11.2018, pp.69–92
+  status: partial_official_index
+  review_date: '2026-11-01'
+  reviewed_units: Article 1(11); recitals 22–24, 26
+  limitations: Authentic act; full direct-text retrieval blocked. Reverify before
+    operational adoption.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: L03
+  title: Regulation (EU) 2024/1083
+  authority_type: law
+  url: https://eur-lex.europa.eu/eli/reg/2024/1083/oj/eng
+  version: OJ L 2024/1083, 17.4.2024
+  status: partial_official_index
+  review_date: '2026-11-01'
+  reviewed_units: Articles 28–29; Media Board arrangements
+  limitations: Article 30b deletion and 8 February 2025 application checked through
+    official indexed text/summary; no complete EMFA assessment.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: L04
+  title: Commission AVMSD overview and revision navigation
+  authority_type: official_guidance
+  url: https://digital-strategy.ec.europa.eu/en/policies/audiovisual-and-media-services
+  version: overview updated 2026-06-22
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: Overview and revision page
+  limitations: Review activity is not adopted law; no later consolidation found in
+    official search on review date.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: G01
+  title: Commission VSP essential-function guidelines 2020/C 223/02
+  authority_type: official_guidance
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020XC0707(02)
+  version: OJ C 223, 7.7.2020
+  status: navigation_verified
+  review_date: '2026-11-01'
+  reviewed_units: Essential-function assessment route
+  limitations: Identity/purpose verified via official navigation and index; full guidance
+    application remains specialist review.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: G02
+  title: Commission European-works guidelines 2020/C 223/03
+  authority_type: official_guidance
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020XC0707(03)
+  version: OJ C 223, 7.7.2020
+  status: navigation_verified
+  review_date: '2026-11-01'
+  reviewed_units: Article 13 calculation/exemptions route
+  limitations: Not accessibility guidance; full calculation module not adopted here.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+- id: B01
+  title: AVMSD Plain English Breakdown and Evidence Guide
+  authority_type: practice
+  url: https://chatgpt.com/library?file_id=libfile_4a8add76139881919165d210904b6cd3&account_id=personal
+  version: '2026-11-01'
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: Full document, lines 1–1137
+  limitations: Practitioner navigation, not legislation or complete national code.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+  sha256: 79b029e72dd3bf49f896cc885984df005b8e04c94588e1237fff38831ad50b66
+  hash_scope: Locally retained retrieved text joined in source-line order; not a hash
+    of the remote original file bytes.
+- id: B02
+  title: EAA Repository Development Prompt
+  authority_type: architecture
+  url: https://chatgpt.com/library?file_id=libfile_1c2d5df726b48191b4aab29fb1a3d45a&account_id=personal
+  version: '2026-11-01'
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: Repository architecture only
+  limitations: No EAA finding IDs, exemptions, thresholds or conformity routes adopted.
+  disposition: adopt_with_limits
+  rights: Link and paraphrase with attribution; no third-party full text redistributed.
+  sha256: aa74e22b436a11421855b354723d9ec95593764ff66d90e601bded785cc06300
+  hash_scope: Locally retained retrieved text joined in source-line order; not a hash
+    of the remote original file bytes.
+- id: D01
+  title: Accessible TV Content Guidance for Production Teams
+  authority_type: practice
+  url: https://github.com/Double-FW/Accessible-Film-TV-and-Video-Content-Production-Management/blob/40cf5488e46906807ae8764ff0a191f35a85cea9/Accessible_TV_Content_Guidance_for_Production_Teams.md
+  version: 1.1-semantic; blob 6ecf75ece7b4d055b12f008656c583243e8a0b79
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: Production lifecycle, caption/AD/signing distinctions and delivery
+  limitations: UK/Ofcom context is not EU-wide law. Historical claims and external
+    bibliography not adopted.
+  disposition: adopt_with_limits
+  rights: Source repository declares MIT; LICENSE blob 3149d6917c830929b7a4b29366a0ab796207731c.
+    Original source text is not redistributed; Double-FW/Gareth Ford Williams attribution
+    retained. No repository-wide licence selected for this package.
+  sha256: 5f1abfbe5155656eb32d08b22d55da943f887e869216bc8b71453be5e4e98923
+  hash_scope: Locally retained retrieved text joined in source-line order; not a hash
+    of the remote original file bytes.
+- id: D02
+  title: Closed Caption Subtitle Guidelines
+  authority_type: practice
+  url: https://github.com/Double-FW/Closed-Caption-Subtitles/blob/7ad0f5f1d8a31969f832985b63345ce4988ff1e6/Closed_Caption_Subtitle_Guidelines.md
+  version: 1.0; blob 554e362590334ab0e42c0ccb3e168358fe2eaff2
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: CCS terminology; editorial, delivery, QA and AI governance
+  limitations: CCS must refers to this guideline. Numeric defaults, BBC version claims
+    and external profiles not adopted as law.
+  disposition: adopt_with_limits
+  rights: Source repository declares MIT; LICENSE blob 3149d6917c830929b7a4b29366a0ab796207731c.
+    Original source text is not redistributed; Double-FW/Gareth Ford Williams attribution
+    retained. No repository-wide licence selected for this package.
+  sha256: feb770e8a95c4c724adfa156b7ddf672a938e11c0f35a7967a4c7f3bb67aafba
+  hash_scope: Locally retained retrieved text joined in source-line order; not a hash
+    of the remote original file bytes.
+- id: D03
+  title: Audio Description Repository Package
+  authority_type: practice
+  url: https://chatgpt.com/library?file_id=libfile_33dd03831edc8191b449875c0cec41b2&account_id=personal
+  version: SHA256 654cedc1b77917a337ece3c3cfd316968fb1cb3749d8246c90c98cfe371a37dc
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: docs/01–07; radio-led scripting, genre, asset roles and evaluation
+  limitations: Local package available. GitHub repository search returned no canonical
+    Audio-Description match; later canonical location unresolved. Historical/external
+    sources not adopted wholesale.
+  disposition: adopt_with_limits
+  rights: 'RIGHTS.md: copyright 2026 Double FW Ltd, prepared for Gareth Ford Williams;
+    no public reuse licence selected. Source package not redistributed. Owner must
+    approve public reuse/training permissions.'
+- id: D04
+  title: Connected_TV.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/14c4416398108df4ff3693277bd354f41de0481c/Connected_TV.md
+  version: Git blob 6403e025fb6f3eacfee7d17be23f49a9dcc28534
+  sha256: 32b69846ac074e88ac087c63f44bc6ac6362d2eefc605b07b965d5ad8f7a377b
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: full Connected_TV.md
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D05
+  title: Multimodal_UX_Design.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/14c4416398108df4ff3693277bd354f41de0481c/Multimodal_UX_Design.md
+  version: Git blob 48cf1bef8c11da7e5059187b92a968a3a9357f53
+  sha256: 8fc210759c9fd68a91609b238569ff11889866848c86dad8f5678dfb6f261a68
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: multimodal design concepts; selected sections
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D06
+  title: Managing_Embedded_Accessibility_and_Inclusive_Design.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Managing-Embedded-Accessibility-and-Inclusive-Design/blob/0abaf4a737bfd4c780c3de46bac3c0ad991f6a2e/Managing_Embedded_Accessibility_and_Inclusive_Design.md
+  version: Git blob f8cfcc4982ce85c9a90caaccb0c7223bc2bff665
+  sha256: 17819f4e67a0ad10343b722d4a2a5e3855630fd885967dbd5b0f3d86ce649ff5
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: embedded ownership, AI governance, lifecycle and research sections
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D07
+  title: Autonomous_Accessibility_Workflow_Management_Guide.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Shift-Left_Accessibility_AI_Management/blob/27e299f281e4bb9adc78ef07760e12002e28c72a/Autonomous_Accessibility_Workflow_Management_Guide.md
+  version: Git blob b6c9aeff6e5fb2f3b0f6a6e8d5c3f9a5d371c7e2
+  sha256: b3b72022dd2071be96f246edcb89400e82710a05ae8b0d0fd8eefdd8d8c96134
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: purpose, evidence coordination and shift-left sections
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D08
+  title: Inclusive_Digital_Service_Outcome_Dataset.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/14c4416398108df4ff3693277bd354f41de0481c/Inclusive_Digital_Service_Outcome_Dataset.md
+  version: Git blob 99515c2231ebf60ee6cde33b4a7b627c7be3e7fe
+  sha256: d2fe9fbd5a2991a415ab06b4658aecaf50f11403c083b138b57509a61c5a8a7b
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: IDSO definitions and evidence/status controls; full dataset
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D09
+  title: CUSTOMER RESEARCH FRAMEWORK.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Data_Ethics_and_Disability/blob/3db809cb035e53bc1825f884f3979fdc73f793a2/CUSTOMER%20RESEARCH%20FRAMEWORK.md
+  version: Git blob 2dea42d0df12f66d15af2b9900d98178cf1ae13f
+  sha256: 516fe9e52e53d1adc4e73eb2e93edee3814335fa718d107e7a52297d9915184e
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: customer identification and research/data intelligence framework
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D10
+  title: Ethical and Inclusive Use of Data Relating to Disabled People.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Data_Ethics_and_Disability/blob/3db809cb035e53bc1825f884f3979fdc73f793a2/Ethical%20and%20Inclusive%20Use%20of%20Data%20Relating%20to%20Disabled%20People.md
+  version: Git blob 352bf43a2d34fe620be8c2852fe6d1f128df0be7
+  sha256: ef90cdfd9f1747ee0f4956c56817bc88e77083f5fd9f6ae312be43712281a9e5
+  status: read
+  review_date: '2026-11-01'
+  reviewed_units: privacy, minimisation, model use and surveillance principles
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: D11
+  title: Accessibility RACI.md
+  authority_type: practice
+  url: https://github.com/Double-FW/Organisation_Governance_and_Strategy/blob/391f4f6da28f5a3afd83bebdc7ee0edd29c64bc9/Accessibility%20RACI.md
+  version: Git blob fe09c0c9d05a1f20e298bd3190d8a5e48d2990a6
+  sha256: 56510aa6c5ad0e1a789928073645caad216c7f6913f3e5c36c3bc369dcda06c3
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: section 4 RACI and decision-rights separation
+  limitations: Pinned source snapshot from prior in-session source retrieval. No claim
+    that all linked material or latest branch changes were reviewed. Not an AVMSD
+    legal requirement.
+  disposition: adopt_with_limits
+  rights: Double-FW attribution retained by pinned link; original source not redistributed.
+    Confirm rights before model ingestion.
+- id: X01
+  title: Accessibility Test-Led Delivery Framework
+  authority_type: practice
+  url: https://github.com/Double-FW/QA_Accessibility_Testing/blob/c0450cdcb89484248ca4a15355ea5d71a58af043/Accessibility_Test_Led_Delivery_Framework.md
+  version: 1.1; blob d3743f13b0f594f0279547bd0073ed6969587846
+  status: read_selected
+  review_date: '2026-11-01'
+  reviewed_units: ATLF-04, ATLF-10, ATLF-11, ATLF-14, ATLF-15, ATLF-16
+  limitations: Current repository metadata/tree and selected pinned framework chunks
+    now accessible. Prior in-session 404 is historical; other test libraries and integration
+    capabilities were not evaluated.
+  disposition: adopt_with_limits
+  rights: Pinned Double-FW attribution; original full text not redistributed.
+  sha256: 4c57d74ea374099cfe22d032e8c8f5cfcd7db40bcc1b5dc4b8bba2c97bd76694

@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "state_model": {
+      "type": "object",
+      "properties": {
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "transitions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "states",
+        "transitions",
+        "rules"
+      ],
+      "additionalProperties": false
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "entry_rule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "responsible_function": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accountable_human": {
+            "type": "string",
+            "minLength": 1
+          },
+          "permitted_automation": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "output_types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "depends_on": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "responsible_function": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence_required": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "human_gate": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "completion": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "blocked_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "action",
+                "depends_on",
+                "responsible_function",
+                "evidence_required",
+                "human_gate",
+                "completion",
+                "blocked_path"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "completion_conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "failure_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "retry_rules": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_triggers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "integration_boundary": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "trigger",
+          "prerequisites",
+          "inputs",
+          "depends_on",
+          "entry_rule",
+          "responsible_function",
+          "accountable_human",
+          "permitted_automation",
+          "decisions",
+          "output_types",
+          "steps",
+          "completion_conditions",
+          "failure_paths",
+          "retry_rules",
+          "review_triggers",
+          "integration_boundary"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 12
+    }
+  },
+  "required": [
+    "version",
+    "state_model",
+    "workflows"
+  ],
+  "additionalProperties": false
+}

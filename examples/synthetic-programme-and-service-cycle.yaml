@@ -1,0 +1,1716 @@
+schema_version: '1.0'
+synthetic: true
+description: Entirely invented programme/service cycle, including national rule, people
+  and approvals. Initial route failure, correction, retest, bounded conclusion and
+  controlled report/claim handoff. No real operation or study.
+records:
+- id: EV-DOC
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: Fictional legal/rights/brief protocol
+      reviewed for exercise only'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: Fictional legal/rights/brief protocol reviewed for exercise only
+- id: EV-FAIL
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: AD absent after advert in rendition
+      v1 despite master track'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: AD absent after advert in rendition v1 despite master track
+- id: EV-FIX
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: Packager v2 restored track metadata;
+      playback and seek/restart checks passed in exercise'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: Packager v2 restored track metadata; playback and seek/restart checks
+      passed in exercise
+- id: EV-QUALITY
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: Fictional specialist reviewed meaning,
+      timing and mix of final v2'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: Fictional specialist reviewed meaning, timing and mix of final v2
+- id: EV-VIEW
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: Fictional viewer task responses and
+      ratings; no participant data collected'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: Fictional viewer task responses and ratings; no participant data
+      collected
+- id: EV-COUNT
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: evidence
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    kind: synthetic
+    locator: 'Synthetic exercise description: Fictional eligible catalogue contains
+      twenty minutes; ten qualifying AD minutes'
+    content_hash: not-a-real-asset; synthetic
+    access: public_synthetic
+    retention: developer fixture only
+    model_use: synthetic training/testing only
+    method_version: exercise-1
+    observation: Fictional eligible catalogue contains twenty minutes; ten qualifying
+      AD minutes
+- id: DELEG-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: delegation
+  status: active
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    human_name: Fictional Alex Example
+    authority_basis: Fictional exercise charter, not real authority
+    operations:
+    - approve
+    - draft
+    - validate
+    - exercise
+    resources:
+    - SYNTHETIC-SVC records only
+    valid_from: '2026-11-01'
+    expires: '2026-12-01'
+    revoked: false
+    limits: Synthetic decisions only; no external communications
+    escalation: Stop real actions; obtain real provider delegation
+- id: JUR-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: jurisdiction
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    country: Fictional exercise territory, not a real national adapter
+    regulator: Fictional regulator
+    national_source_ids:
+    - B01
+    resolved: true
+    legal_rationale: Invented exercise classification only; B01 supplies EU context,
+      not national law
+    reporting_instructions: Fictional monthly exercise handoff, not a regulator instruction
+- id: CLASS-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: classification
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    mode: on_demand
+    jurisdiction_id: JUR-1
+    editorial_responsibility: true
+    economic_public_facts: Fictional general-public catalogue under selection/organisation
+      control
+    jurisdiction_facts: Fictional head office and editorial workforce in exercise
+      territory
+    applicability: applicable
+    rationale: Synthetic application, not a real legal conclusion
+  approval_id: APP-SCOPE
+- id: REQ-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: requirement
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    source_id: B01
+    source_version: '2026-11-01'
+    clause: Synthetic national AD condition supporting Article 7 exercise
+    actor: Fictional provider
+    authority: policy
+    applicability: applicable
+    national_dependency: synthetic; not national law
+    coverage_limits: Invented target for validation only
+    evidence_required:
+    - correct AD feature, quality and actual delivered rendition
+- id: TARGET-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: target
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    requirement_id: REQ-1
+    feature: ad
+    authority: synthetic
+    threshold: 50
+    unit: percent
+    method_version: synthetic-minutes-1
+    counting_rules: Eligible programme durations; no repeats; qualifying AD counted
+      once
+    qualifying_population: Fictional eligible catalogue of 20 minutes
+    exclusions: []
+    repeat_rule: No repeats in exercise
+    period: 2026-11
+- id: SRC-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: source
+  status: active
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    source_id: B01
+    version: '2026-11-01'
+    locator: Synthetic review contract only
+    source_state: verified
+    currency_checked: '2026-11-01'
+- id: PROG-2
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: programme
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_key: Fictional Hills Programme
+    episode: '02'
+    edition: final
+    language: en-GB
+    duration_seconds: 600
+    region: ZZ
+    mode: on_demand
+    asset_version: cut-1
+- id: PROG-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: programme
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_key: Fictional River Programme
+    episode: '01'
+    edition: final
+    language: en-GB
+    duration_seconds: 600
+    region: ZZ
+    mode: on_demand
+    asset_version: cut-1
+- id: RIGHTS-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: rights
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    languages:
+    - en-GB
+    regions:
+    - ZZ
+    uses:
+    - exercise playback only
+    rights_state: confirmed
+    evidence_ids:
+    - EV-DOC
+- id: FEAT-MASTER
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: feature
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature: ad
+    language: en-GB
+    asset_version: ad-master-1
+    asset_role: complete AD programme mix
+    stage: produced
+    availability: present
+    rights_id: RIGHTS-1
+- id: FEAT-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: feature
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature: ad
+    language: en-GB
+    asset_version: ad-delivery-1
+    asset_role: complete AD programme mix
+    stage: packaged
+    availability: present
+    rights_id: RIGHTS-1
+- id: FEAT-2
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: feature
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature: ad
+    language: en-GB
+    asset_version: ad-delivery-2
+    asset_role: complete AD programme mix
+    stage: player_presented
+    availability: present
+    rights_id: RIGHTS-1
+- id: EDITORIAL-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: editorial
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    route_choice: hybrid
+    rationale: Fictional audio-led introduction plus separate description of silent
+      map
+    visual_audit_evidence_ids:
+    - EV-DOC
+    requirement_ids:
+    - REQ-1
+    conflicts_with_obligation: false
+    reviewer: Fictional editorial reviewer
+- id: SUPPLIER-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: supplier
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    feature_ids:
+    - FEAT-MASTER
+    contract_locator: Synthetic rights/brief EV-DOC
+    deliverables:
+    - AD mix for cut-1 and quality evidence
+    correction_terms: Supplier corrects version mismatches and retests
+    evidence_ids:
+    - EV-DOC
+- id: ROUTE-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: route
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature_id: FEAT-1
+    feature_version: ad-delivery-1
+    expected_language: en-GB
+    expected_feature: ad
+    expected_episode: '01'
+    expected_edition: final
+    device: Fictional connected TV firmware 1
+    app_build: exercise-build-1
+    delivery_profile: Fictional adaptive profile 1
+    region: ZZ
+    steps:
+    - find
+    - select AD
+    - play full sequence
+    - advert
+    - seek
+    - resume
+    - episode boundary
+- id: ROUTE-2
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: route
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature_id: FEAT-2
+    feature_version: ad-delivery-2
+    expected_language: en-GB
+    expected_feature: ad
+    expected_episode: '01'
+    expected_edition: final
+    device: Fictional connected TV firmware 1
+    app_build: exercise-build-2
+    delivery_profile: Fictional adaptive profile 1
+    region: ZZ
+    steps:
+    - find
+    - select AD
+    - play full sequence
+    - advert
+    - seek
+    - resume
+    - episode boundary
+- id: DELIV-FAIL
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: delivery
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature_id: FEAT-1
+    route_id: ROUTE-1
+    source_result: fail
+    source_vocabulary: exercise QA 1
+    adapter_rationale: Identity mapping; no source status discarded
+    result: fail
+    method_version: synthetic-playback-1
+    assumptions_valid: true
+    expected: Correct complete AD persists throughout declared route
+    observed: Master exists; no usable AD after advert
+    reviewer_competence: Fictional competent specialist for exercise only
+    evidence_ids:
+    - EV-FAIL
+- id: DELIV-PASS
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: delivery
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature_id: FEAT-2
+    route_id: ROUTE-2
+    source_result: pass
+    source_vocabulary: exercise QA 1
+    adapter_rationale: Identity mapping; no source status discarded
+    result: pass
+    method_version: synthetic-playback-1
+    assumptions_valid: true
+    expected: Correct complete AD persists throughout declared route
+    observed: Correct AD retained after advert, seek and resume in exercise
+    reviewer_competence: Fictional competent specialist for exercise only
+    evidence_ids:
+    - EV-FIX
+- id: QUALITY-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: quality
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    feature_id: FEAT-2
+    route_id: ROUTE-2
+    source_result: pass
+    source_vocabulary: exercise QA 1
+    adapter_rationale: Identity mapping; no source status discarded
+    result: pass
+    method_version: synthetic-playback-1
+    assumptions_valid: true
+    expected: Correct complete AD persists throughout declared route
+    observed: Meaning, timing and mix reviewed in exercise
+    reviewer_competence: Fictional competent specialist for exercise only
+    evidence_ids:
+    - EV-QUALITY
+- id: ACCEPT-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: acceptance
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    supplier_id: SUPPLIER-1
+    quality_ids:
+    - QUALITY-1
+    result: accepted
+    evidence_ids:
+    - EV-QUALITY
+    rationale: Synthetic supplier asset acceptance; delivery evidence separate
+- id: VIEW-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: viewer
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    route_id: ROUTE-2
+    outcome_ids:
+    - IDSO-02
+    - IDSO-12
+    - IDSO-18
+    - IDSO-20
+    finding: supported
+    measure:
+      definition: Comprehension of fictional map direction
+      denominator: two fictional task responses
+      unit_scale: correct/incorrect and reported satisfaction 1–5
+      method: Synthetic task simulation, not participant research
+      context: Fictional final cut on route 2
+      instrument_version: exercise-question-1
+      uncertainty: No population inference; invented observations
+      interpretation_limits: No lived-experience or real viewer evidence
+    observations:
+    - Two invented correct responses
+    reported_findings:
+    - Invented satisfaction 4/5
+    negative_cases: []
+    missing_viewers: []
+    sample_rationale: Two invented entries to exercise schema only
+    data_authority: No real participant data; synthetic generation
+    model_use: synthetic_only
+    children_protection_data: false
+    commercial_reuse: false
+    evidence_ids:
+    - EV-VIEW
+- id: COV-BASE
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: coverage
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: TARGET-1
+    feature: ad
+    stage: produced
+    numerator: 5
+    denominator: 20
+    numerator_unit: minutes
+    denominator_unit: minutes
+    method_version: synthetic-minutes-1
+    population: Fictional 20-minute eligible catalogue snapshot
+    denominator_inventory:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 600
+    - programme_id: PROG-2
+      programme_version: cut-1
+      start: 0
+      end: 600
+    exclusions: []
+    repeats: none
+    acquisitions: one fictional original; none acquired
+    languages:
+    - en-GB
+    missing_failed: []
+    intervals:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 300
+    delivery_ids: []
+    evidence_ids:
+    - EV-COUNT
+- id: COV-CURRENT
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: coverage
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: TARGET-1
+    feature: ad
+    stage: usable
+    numerator: 10
+    denominator: 20
+    numerator_unit: minutes
+    denominator_unit: minutes
+    method_version: synthetic-minutes-1
+    population: Fictional 20-minute eligible catalogue snapshot
+    denominator_inventory:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 600
+    - programme_id: PROG-2
+      programme_version: cut-1
+      start: 0
+      end: 600
+    exclusions: []
+    repeats: none
+    acquisitions: one fictional original; none acquired
+    languages:
+    - en-GB
+    missing_failed:
+    - Initial route 1 failed; retained as DELIV-FAIL
+    intervals:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 600
+    delivery_ids:
+    - DELIV-PASS
+    evidence_ids:
+    - EV-COUNT
+- id: ISSUE-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: issue
+  status: completed
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    programme_id: PROG-1
+    programme_version: cut-1
+    origin_id: DELIV-FAIL
+    impact: Fictional listeners lose visual information after advert
+    correction: Packager metadata corrected; deployed in exercise build 2 only
+    correction_version: ad-delivery-2
+    retest_id: DELIV-PASS
+    resolution: verified_resolved
+    due_date: '2026-11-01'
+    evidence_ids:
+    - EV-FAIL
+    - EV-FIX
+- id: PLAN-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: action_plan
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    requirement_ids:
+    - REQ-1
+    baseline_coverage_ids:
+    - COV-BASE
+    target_ids:
+    - TARGET-1
+    action_ids:
+    - ISSUE-1
+    resources: Fictional supplier, delivery and review capacity
+    communication_required: true
+    review_date: '2026-12-01'
+- id: IMPROVE-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: improvement
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    plan_id: PLAN-1
+    baseline_id: COV-BASE
+    current_id: COV-CURRENT
+    progress: cannot_compare
+    reconciliation: Baseline is produced provision; current is usable provision. Unlike
+      stages prevent a comparable progress conclusion despite higher numeric total.
+    evidence_ids:
+    - EV-COUNT
+    - EV-FIX
+- id: CONCLUSION-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: conclusion
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    requirement_id: REQ-1
+    classification_id: CLASS-1
+    result: met
+    rationale: Fictional target 50% met by 10/20 usable minutes, final specialist
+      quality passed and exercise barrier resolved. No real AVMSD assurance.
+    evidence_ids:
+    - EV-COUNT
+    - EV-FIX
+    - EV-QUALITY
+    coverage_ids:
+    - COV-CURRENT
+    quality_ids:
+    - QUALITY-1
+    viewer_ids:
+    - VIEW-1
+    unresolved_issues: []
+  approval_id: APP-CONCLUSION
+- id: REPORT-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: report
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    period: 2026-11
+    figures:
+    - coverage_id: COV-CURRENT
+      numerator: 10
+      denominator: 20
+    conclusion_ids:
+    - CONCLUSION-1
+    evidence_ids:
+    - EV-COUNT
+    - EV-FIX
+    wording: 'Synthetic exercise: 10 of 20 eligible minutes have verified delivered
+      AD on route 2. Route 1 failed and was corrected. No real report.'
+    limitations:
+    - Fictional target and observations; other features/routes not assessed; no comparable
+      progress claim
+    recipient: Fictional regulator exercise inbox; no external transmission
+    duty_holder: provider
+    deadline_source_actor: synthetic
+  approval_id: APP-REPORT
+- id: CLAIM-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: claim
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    conclusion_id: CONCLUSION-1
+    wording: 'Synthetic developer exercise only: final route 2 meets fictional AD
+      target for the stated programme/period; no real compliance claim.'
+    evidence_ids:
+    - EV-COUNT
+    - EV-FIX
+    - EV-QUALITY
+    publication_state: handoff
+    destination: Local review pack only
+    valid_until: '2026-12-01'
+    withdrawal_owner: Fictional exercise owner
+    receipt: not published
+  approval_id: APP-CLAIM
+- id: EMERGENCY-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: emergency
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    mode: exercise
+    protocol_id: DELEG-1
+    message_version: fictional-message-1
+    accessible_variants:
+    - spoken message
+    - SDH
+    missing_variants:
+    - signed update
+    activation_time: '2026-11-01T10:00:00Z'
+    transmission_time: controlled local exercise; not transmitted
+    urgent_correction: Fictional emergency lead activates signed correction route;
+      preserve barrier and follow approved rapid protocol
+    exercise_only: true
+    evidence_ids:
+    - EV-DOC
+- id: MONITOR-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: monitoring
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    trigger: Packager change and corrected barrier
+    affected_ids:
+    - ROUTE-1
+    - ROUTE-2
+    - CONCLUSION-1
+    - CLAIM-1
+    next_action: Monitor recurrence and reopen claim if route regresses
+    review_due: '2026-12-01'
+    evidence_ids:
+    - EV-FAIL
+    - EV-FIX
+- id: APP-SCOPE
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: approval
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: CLASS-1
+    target_version: '1'
+    target_digest: 2c7619f1369548e22e3e9d18dac2601556e0c47d543391e0401d73d212062c61
+    dependency_digests:
+      JUR-1: aaef8e959b316845c17ac90ef56423f082b1c7da1535a400e051154b2d53ba34
+    human_name: Fictional Alex Example
+    delegation_id: DELEG-1
+    authority_basis: Fictional exercise charter only
+    approved_scope:
+      service: SYNTHETIC-SVC
+      period: 2026-11
+      region: ZZ
+    approval_date: '2026-11-01'
+    valid_until: '2026-12-01'
+- id: APP-CONCLUSION
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: approval
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: CONCLUSION-1
+    target_version: '1'
+    target_digest: 545eba94b67cd583bd856e287baed3f3930ef3389106905da634eb62d8fc952f
+    dependency_digests:
+      RIGHTS-1: bdd7511bece264e16c08702c4a6d3f6d9fb25809ee49593c561f7820eee4b0bd
+      EV-FIX: 878d16e168df2566e7c533ee78430031256588a52605f90ced80f83f3bd808ee
+      EV-QUALITY: 34961c848f9bc8ae472320c65fdd2a9a49f502d7282edd45047cc811fe3b8c7d
+      COV-CURRENT: 737a0c03cfd071200012591e854e94b708f899062a6ffb5b050b28ba255e94bc
+      CLASS-1: 2c7619f1369548e22e3e9d18dac2601556e0c47d543391e0401d73d212062c61
+      DELIV-PASS: 53b7dadf5db139d150ef3fa4f2c74f4f2de644a25a20004af49fa8633b39c6c9
+      TARGET-1: 87e31489d33b894b62a1404537e3000b24cce742e8ad9421494fdc0d3ed73085
+      JUR-1: aaef8e959b316845c17ac90ef56423f082b1c7da1535a400e051154b2d53ba34
+      PROG-1: 3027dd7a88eced6f524a11ae0ce0d8ebf5871cb0418fda4e7be548efb32eec5a
+      FEAT-2: 1477d8dcd34b412bdcabbc0a5cc3afc2d564b5a31781e166f4d32029c082a293
+      EV-DOC: 802adae76cdccfb5be6bf1b99f2edcf3f21eddbfa0e4782b2e9731d4d6502ff9
+      ROUTE-2: 007daf3b28d181047de21942b7d4f844b1130ac732408224bdac7cc97afbedd8
+      EV-VIEW: 1dd7cbddc12c9a3a6c85eb6c762354f05e2e5a1a2daeb7fe9ca033b36000be54
+      QUALITY-1: c3dfb3a3505edd8c85e53e629e8b4bbe0886f6fb23f8670432f5aa2e2efb4334
+      EV-COUNT: 63dbf7c5eefc08218f199d3655c12594c995c80b5624b94998392b316ac2cc16
+      REQ-1: fad543b00dcb2dcb6a3644a3df05362c7d83bcb46a9b717b7d645b0a20499e1f
+      PROG-2: 3245f47d09221591b4e43ed07f3384da727c0df3cc6f803442ec61807fddb690
+      VIEW-1: 95aa43f06bfe2d4b173d49d5b583b78a85f0068a4dd5a1eb5a34f3601f07b136
+    human_name: Fictional Alex Example
+    delegation_id: DELEG-1
+    authority_basis: Fictional exercise charter only
+    approved_scope:
+      service: SYNTHETIC-SVC
+      period: 2026-11
+      region: ZZ
+    approval_date: '2026-11-01'
+    valid_until: '2026-12-01'
+- id: APP-REPORT
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: approval
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: REPORT-1
+    target_version: '1'
+    target_digest: 9e574e210ea79db84f073e4780b03f8c7c75d0a4cb8ac73c230185525087129e
+    dependency_digests:
+      RIGHTS-1: bdd7511bece264e16c08702c4a6d3f6d9fb25809ee49593c561f7820eee4b0bd
+      COV-CURRENT: 737a0c03cfd071200012591e854e94b708f899062a6ffb5b050b28ba255e94bc
+      TARGET-1: 87e31489d33b894b62a1404537e3000b24cce742e8ad9421494fdc0d3ed73085
+      EV-COUNT: 63dbf7c5eefc08218f199d3655c12594c995c80b5624b94998392b316ac2cc16
+      REQ-1: fad543b00dcb2dcb6a3644a3df05362c7d83bcb46a9b717b7d645b0a20499e1f
+      EV-FIX: 878d16e168df2566e7c533ee78430031256588a52605f90ced80f83f3bd808ee
+      DELIV-PASS: 53b7dadf5db139d150ef3fa4f2c74f4f2de644a25a20004af49fa8633b39c6c9
+      JUR-1: aaef8e959b316845c17ac90ef56423f082b1c7da1535a400e051154b2d53ba34
+      QUALITY-1: c3dfb3a3505edd8c85e53e629e8b4bbe0886f6fb23f8670432f5aa2e2efb4334
+      EV-QUALITY: 34961c848f9bc8ae472320c65fdd2a9a49f502d7282edd45047cc811fe3b8c7d
+      CONCLUSION-1: 545eba94b67cd583bd856e287baed3f3930ef3389106905da634eb62d8fc952f
+      PROG-1: 3027dd7a88eced6f524a11ae0ce0d8ebf5871cb0418fda4e7be548efb32eec5a
+      FEAT-2: 1477d8dcd34b412bdcabbc0a5cc3afc2d564b5a31781e166f4d32029c082a293
+      EV-DOC: 802adae76cdccfb5be6bf1b99f2edcf3f21eddbfa0e4782b2e9731d4d6502ff9
+      VIEW-1: 95aa43f06bfe2d4b173d49d5b583b78a85f0068a4dd5a1eb5a34f3601f07b136
+      CLASS-1: 2c7619f1369548e22e3e9d18dac2601556e0c47d543391e0401d73d212062c61
+      ROUTE-2: 007daf3b28d181047de21942b7d4f844b1130ac732408224bdac7cc97afbedd8
+      EV-VIEW: 1dd7cbddc12c9a3a6c85eb6c762354f05e2e5a1a2daeb7fe9ca033b36000be54
+      PROG-2: 3245f47d09221591b4e43ed07f3384da727c0df3cc6f803442ec61807fddb690
+    human_name: Fictional Alex Example
+    delegation_id: DELEG-1
+    authority_basis: Fictional exercise charter only
+    approved_scope:
+      service: SYNTHETIC-SVC
+      period: 2026-11
+      region: ZZ
+    approval_date: '2026-11-01'
+    valid_until: '2026-12-01'
+- id: APP-CLAIM
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: approval
+  status: approved
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    target_id: CLAIM-1
+    target_version: '1'
+    target_digest: 31e22721eb75efce07b4c8e51160bd44c081ab2d5a8d53156225de86e59dc27e
+    dependency_digests:
+      RIGHTS-1: bdd7511bece264e16c08702c4a6d3f6d9fb25809ee49593c561f7820eee4b0bd
+      COV-CURRENT: 737a0c03cfd071200012591e854e94b708f899062a6ffb5b050b28ba255e94bc
+      TARGET-1: 87e31489d33b894b62a1404537e3000b24cce742e8ad9421494fdc0d3ed73085
+      EV-COUNT: 63dbf7c5eefc08218f199d3655c12594c995c80b5624b94998392b316ac2cc16
+      REQ-1: fad543b00dcb2dcb6a3644a3df05362c7d83bcb46a9b717b7d645b0a20499e1f
+      EV-FIX: 878d16e168df2566e7c533ee78430031256588a52605f90ced80f83f3bd808ee
+      DELIV-PASS: 53b7dadf5db139d150ef3fa4f2c74f4f2de644a25a20004af49fa8633b39c6c9
+      JUR-1: aaef8e959b316845c17ac90ef56423f082b1c7da1535a400e051154b2d53ba34
+      QUALITY-1: c3dfb3a3505edd8c85e53e629e8b4bbe0886f6fb23f8670432f5aa2e2efb4334
+      EV-QUALITY: 34961c848f9bc8ae472320c65fdd2a9a49f502d7282edd45047cc811fe3b8c7d
+      CONCLUSION-1: 545eba94b67cd583bd856e287baed3f3930ef3389106905da634eb62d8fc952f
+      PROG-1: 3027dd7a88eced6f524a11ae0ce0d8ebf5871cb0418fda4e7be548efb32eec5a
+      FEAT-2: 1477d8dcd34b412bdcabbc0a5cc3afc2d564b5a31781e166f4d32029c082a293
+      EV-DOC: 802adae76cdccfb5be6bf1b99f2edcf3f21eddbfa0e4782b2e9731d4d6502ff9
+      VIEW-1: 95aa43f06bfe2d4b173d49d5b583b78a85f0068a4dd5a1eb5a34f3601f07b136
+      CLASS-1: 2c7619f1369548e22e3e9d18dac2601556e0c47d543391e0401d73d212062c61
+      ROUTE-2: 007daf3b28d181047de21942b7d4f844b1130ac732408224bdac7cc97afbedd8
+      EV-VIEW: 1dd7cbddc12c9a3a6c85eb6c762354f05e2e5a1a2daeb7fe9ca033b36000be54
+      PROG-2: 3245f47d09221591b4e43ed07f3384da727c0df3cc6f803442ec61807fddb690
+    human_name: Fictional Alex Example
+    delegation_id: DELEG-1
+    authority_basis: Fictional exercise charter only
+    approved_scope:
+      service: SYNTHETIC-SVC
+      period: 2026-11
+      region: ZZ
+    approval_date: '2026-11-01'
+    valid_until: '2026-12-01'
+- id: SUBMIT-1
+  schema_version: '1.0'
+  record_version: '1'
+  record_type: submission
+  status: draft
+  synthetic: true
+  scope:
+    service: SYNTHETIC-SVC
+    period: 2026-11
+    region: ZZ
+  provenance:
+  - SYNTHETIC
+  owner: Fictional exercise owner
+  created: '2026-11-01'
+  updated: '2026-11-01'
+  relationships: []
+  limitations:
+  - Entirely synthetic developer exercise; no real provider, country, person, observation
+    or approval.
+  data:
+    report_id: REPORT-1
+    report_version: '1'
+    report_digest: 9e574e210ea79db84f073e4780b03f8c7c75d0a4cb8ac73c230185525087129e
+    approval_id: APP-REPORT
+    operation: handoff
+    receipt: Not submitted; local handoff only
+    transaction_id: SYNTHETIC-HANDOFF-1
+    channel: local review pack
+    idempotency_key: synthetic-report-1
+executions:
+- workflow_id: WF02
+  run_id: SYNTHETIC-WF02
+  synthetic: true
+  steps:
+  - id: WF02-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id001
+    - EV-DOC
+    requires_approval: false
+  - id: WF02-S2
+    depends_on:
+    - WF02-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id001
+    requires_approval: false
+  - id: WF02-S3
+    depends_on:
+    - WF02-S2
+    history:
+    - to: running
+    - to: awaiting_approval
+    - to: complete
+    evidence_ids: *id001
+    requires_approval: true
+    approval_id: APP-SCOPE
+- workflow_id: WF04
+  run_id: SYNTHETIC-WF04
+  synthetic: true
+  steps:
+  - id: WF04-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id002
+    - EV-DOC
+    requires_approval: false
+  - id: WF04-S2
+    depends_on:
+    - WF04-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id002
+    requires_approval: false
+  - id: WF04-S3
+    depends_on:
+    - WF04-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id002
+    requires_approval: false
+- workflow_id: WF05
+  run_id: SYNTHETIC-WF05
+  synthetic: true
+  steps:
+  - id: WF05-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id003
+    - EV-QUALITY
+    requires_approval: false
+  - id: WF05-S2
+    depends_on:
+    - WF05-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id003
+    requires_approval: false
+  - id: WF05-S3
+    depends_on:
+    - WF05-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id003
+    requires_approval: false
+- workflow_id: WF06
+  run_id: SYNTHETIC-WF06
+  synthetic: true
+  steps:
+  - id: WF06-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id004
+    - EV-FAIL
+    - EV-FIX
+    requires_approval: false
+  - id: WF06-S2
+    depends_on:
+    - WF06-S1
+    history:
+    - to: running
+    - to: failed
+    - to: running
+      resume_evidence_ids:
+      - EV-FIX
+    - to: complete
+    evidence_ids: *id004
+    requires_approval: false
+  - id: WF06-S3
+    depends_on:
+    - WF06-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id004
+    requires_approval: false
+- workflow_id: WF07
+  run_id: SYNTHETIC-WF07
+  synthetic: true
+  steps:
+  - id: WF07-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id005
+    - EV-VIEW
+    requires_approval: false
+  - id: WF07-S2
+    depends_on:
+    - WF07-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id005
+    requires_approval: false
+  - id: WF07-S3
+    depends_on:
+    - WF07-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id005
+    requires_approval: false
+- workflow_id: WF08
+  run_id: SYNTHETIC-WF08
+  synthetic: true
+  steps:
+  - id: WF08-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id006
+    - EV-COUNT
+    requires_approval: false
+  - id: WF08-S2
+    depends_on:
+    - WF08-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id006
+    requires_approval: false
+  - id: WF08-S3
+    depends_on:
+    - WF08-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id006
+    requires_approval: false
+- workflow_id: WF11
+  run_id: SYNTHETIC-WF11
+  synthetic: true
+  steps:
+  - id: WF11-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id007
+    - EV-FAIL
+    - EV-FIX
+    requires_approval: false
+  - id: WF11-S2
+    depends_on:
+    - WF11-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id007
+    requires_approval: false
+  - id: WF11-S3
+    depends_on:
+    - WF11-S2
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id007
+    requires_approval: false
+- workflow_id: WF09
+  run_id: SYNTHETIC-WF09
+  synthetic: true
+  steps:
+  - id: WF09-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id008
+    - EV-COUNT
+    - EV-FIX
+    requires_approval: false
+  - id: WF09-S2
+    depends_on:
+    - WF09-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id008
+    requires_approval: false
+  - id: WF09-S3
+    depends_on:
+    - WF09-S2
+    history:
+    - to: running
+    - to: awaiting_approval
+    - to: complete
+    evidence_ids: *id008
+    requires_approval: true
+    approval_id: APP-REPORT
+- workflow_id: WF12
+  run_id: SYNTHETIC-WF12
+  synthetic: true
+  steps:
+  - id: WF12-S1
+    depends_on: []
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: &id009
+    - EV-FIX
+    requires_approval: false
+  - id: WF12-S2
+    depends_on:
+    - WF12-S1
+    history:
+    - to: running
+    - to: complete
+    evidence_ids: *id009
+    requires_approval: false
+  - id: WF12-S3
+    depends_on:
+    - WF12-S2
+    history:
+    - to: running
+    - to: awaiting_approval
+    - to: complete
+    evidence_ids: *id009
+    requires_approval: true
+    approval_id: APP-CLAIM

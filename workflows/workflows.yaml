@@ -1,0 +1,905 @@
+version: '1.0'
+state_model:
+  states:
+  - pending
+  - running
+  - blocked
+  - failed
+  - awaiting_approval
+  - complete
+  transitions:
+    pending:
+    - running
+    - blocked
+    running:
+    - blocked
+    - failed
+    - awaiting_approval
+    - complete
+    blocked:
+    - running
+    failed:
+    - running
+    awaiting_approval:
+    - complete
+    - blocked
+    complete: []
+  rules:
+  - complete requires evidence, dependency completion and required approval
+  - blocked to running requires resolved dependency evidence
+  - failed retry requires recorded corrective evidence
+  - completed execution is immutable; create a new run for changed inputs
+workflows:
+- id: WF01
+  name: Source verification
+  trigger: source change or intake
+  prerequisites: &id001
+  - source identities
+  inputs: *id001
+  depends_on: []
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: source maintenance
+  accountable_human: source owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - source
+  steps:
+  - id: WF01-S1
+    action: verify currency and read selected units
+    depends_on: []
+    responsible_function: source maintenance
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF01-S2
+    action: resolve conflicts against primary authority
+    depends_on:
+    - WF01-S1
+    responsible_function: source maintenance
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF01-S3
+    action: record adoption limits and unresolved access
+    depends_on:
+    - WF01-S2
+    responsible_function: source maintenance
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF02
+  name: Service and jurisdiction intake
+  trigger: new or changed service
+  prerequisites: &id002
+  - entity and service facts
+  inputs: *id002
+  depends_on:
+  - WF01
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: legal intake
+  accountable_human: legal decision owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - jurisdiction
+  - classification
+  steps:
+  - id: WF02-S1
+    action: classify each editorial/platform activity
+    depends_on: []
+    responsible_function: legal intake
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF02-S2
+    action: establish jurisdiction and national sources
+    depends_on:
+    - WF02-S1
+    responsible_function: legal intake
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF02-S3
+    action: obtain exact human scope decision
+    depends_on:
+    - WF02-S2
+    responsible_function: legal intake
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF03
+  name: Legal target and action planning
+  trigger: approved scope or changed rule
+  prerequisites: &id003
+  - approved classification
+  - national instructions
+  inputs: *id003
+  depends_on:
+  - WF02
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: legal/planning
+  accountable_human: service and legal owners
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - requirement
+  - target
+  - action_plan
+  steps:
+  - id: WF03-S1
+    action: map requirements and specialist gaps
+    depends_on: []
+    responsible_function: legal/planning
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF03-S2
+    action: define feature targets and baseline method
+    depends_on:
+    - WF03-S1
+    responsible_function: legal/planning
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF03-S3
+    action: approve funded actions and national interpretations
+    depends_on:
+    - WF03-S2
+    responsible_function: legal/planning
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF04
+  name: Commissioning and acquisition
+  trigger: new brief or purchase
+  prerequisites: &id004
+  - requirements
+  - distribution needs
+  inputs: *id004
+  depends_on:
+  - WF03
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: commissioning/acquisition
+  accountable_human: commissioner/procurement owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - rights
+  - supplier
+  - acceptance
+  steps:
+  - id: WF04-S1
+    action: check assets and rights before commitment
+    depends_on: []
+    responsible_function: commissioning/acquisition
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF04-S2
+    action: contract feature/version and correction terms
+    depends_on:
+    - WF04-S1
+    responsible_function: commissioning/acquisition
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF04-S3
+    action: review supplier evidence and acceptance conditions
+    depends_on:
+    - WF04-S2
+    responsible_function: commissioning/acquisition
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF05
+  name: Production and editorial review
+  trigger: commissioned programme or recut
+  prerequisites: &id005
+  - brief
+  - reference picture and rights
+  inputs: *id005
+  depends_on:
+  - WF04
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: access production
+  accountable_human: editorial/access lead
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - programme
+  - feature
+  - editorial
+  - quality
+  steps:
+  - id: WF05-S1
+    action: audit meaning and create feature treatment
+    depends_on: []
+    responsible_function: access production
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF05-S2
+    action: produce and independently review exact assets
+    depends_on:
+    - WF05-S1
+    responsible_function: access production
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF05-S3
+    action: approve editorial route against obligations
+    depends_on:
+    - WF05-S2
+    responsible_function: access production
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF06
+  name: Packaging and delivery verification
+  trigger: new asset or route/configuration change
+  prerequisites: &id006
+  - exact accepted assets
+  - route matrix
+  inputs: *id006
+  depends_on:
+  - WF05
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: distribution/QA
+  accountable_human: delivery owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - route
+  - delivery
+  - quality
+  - evidence
+  steps:
+  - id: WF06-S1
+    action: trace transformations and identifiers
+    depends_on: []
+    responsible_function: distribution/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF06-S2
+    action: execute valid playback and persistence tests
+    depends_on:
+    - WF06-S1
+    responsible_function: distribution/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF06-S3
+    action: record failures and qualifying delivered evidence
+    depends_on:
+    - WF06-S2
+    responsible_function: distribution/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF07
+  name: Viewer research
+  trigger: discovery, new format or delivered evaluation
+  prerequisites: &id007
+  - research permission
+  - versioned question and instrument
+  inputs: *id007
+  depends_on:
+  - WF03
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: research/data
+  accountable_human: research owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - viewer
+  - evidence
+  steps:
+  - id: WF07-S1
+    action: recruit beyond successful viewers and trial method
+    depends_on: []
+    responsible_function: research/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF07-S2
+    action: run accessible permitted tasks
+    depends_on:
+    - WF07-S1
+    responsible_function: research/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF07-S3
+    action: analyse differences, missingness and severe cases
+    depends_on:
+    - WF07-S2
+    responsible_function: research/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF08
+  name: Provision and progress calculation
+  trigger: period end or inventory change
+  prerequisites: &id008
+  - counting rules
+  - qualifying inventory and delivery evidence
+  inputs: *id008
+  depends_on:
+  - WF06
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: reporting/data
+  accountable_human: reporting owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - coverage
+  - improvement
+  steps:
+  - id: WF08-S1
+    action: validate units, population and intervals
+    depends_on: []
+    responsible_function: reporting/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF08-S2
+    action: reconcile periods and per-feature provision
+    depends_on:
+    - WF08-S1
+    responsible_function: reporting/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF08-S3
+    action: review baseline comparison and limitations
+    depends_on:
+    - WF08-S2
+    responsible_function: reporting/data
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF09
+  name: Regulator reporting and plan communication
+  trigger: national due date or plan communication
+  prerequisites: &id009
+  - national instructions
+  - approved evidence and exact authority
+  inputs: *id009
+  depends_on:
+  - WF08
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: reporting
+  accountable_human: authorised reporting owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - conclusion
+  - report
+  - approval
+  - submission
+  steps:
+  - id: WF09-S1
+    action: reconstruct figures and scoped conclusions
+    depends_on: []
+    responsible_function: reporting
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF09-S2
+    action: obtain exact artifact approval
+    depends_on:
+    - WF09-S1
+    responsible_function: reporting
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF09-S3
+    action: handoff or authorised submission and verify receipt
+    depends_on:
+    - WF09-S2
+    responsible_function: reporting
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF10
+  name: Emergency exercise and response
+  trigger: planned exercise or incident
+  prerequisites: &id010
+  - approved rapid protocol
+  - national emergency instructions
+  inputs: *id010
+  depends_on:
+  - WF03
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: emergency operations
+  accountable_human: emergency lead
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - emergency
+  - issue
+  - evidence
+  steps:
+  - id: WF10-S1
+    action: verify message/variant and urgent-access responsibilities
+    depends_on: []
+    responsible_function: emergency operations
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF10-S2
+    action: exercise or respond within existing authority
+    depends_on:
+    - WF10-S1
+    responsible_function: emergency operations
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF10-S3
+    action: preserve barriers and urgently correct/review
+    depends_on:
+    - WF10-S2
+    responsible_function: emergency operations
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF11
+  name: Complaint correction and retest
+  trigger: barrier, complaint or regression
+  prerequisites: &id011
+  - affected asset/route
+  - observed evidence
+  inputs: *id011
+  depends_on:
+  - WF06
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: operations/QA
+  accountable_human: service owner
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - complaint
+  - issue
+  - delivery
+  - quality
+  steps:
+  - id: WF11-S1
+    action: triage consequence and assign correction
+    depends_on: []
+    responsible_function: operations/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF11-S2
+    action: apply versioned fix within authority
+    depends_on:
+    - WF11-S1
+    responsible_function: operations/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF11-S3
+    action: retest actual delivery and verify resolution
+    depends_on:
+    - WF11-S2
+    responsible_function: operations/QA
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.
+- id: WF12
+  name: Monitoring reassessment and claim review
+  trigger: change, review expiry or new evidence
+  prerequisites: &id012
+  - affected records
+  - valid authority
+  inputs: *id012
+  depends_on:
+  - WF09
+  entry_rule: Dependencies apply to the affected operation; discovery research and
+    incident preparation may begin independently under recorded authority. Do not
+    bypass a required final decision.
+  responsible_function: monitoring/legal
+  accountable_human: service/legal/publication owners
+  permitted_automation:
+  - retrieve
+  - draft
+  - compare
+  - calculate
+  - validate
+  - maintain authorised records
+  decisions:
+  - Exact consequential decision requires current human authority; no automatic legal
+    or editorial approval
+  output_types:
+  - monitoring
+  - conclusion
+  - approval
+  - claim
+  steps:
+  - id: WF12-S1
+    action: identify affected requirements and evidence
+    depends_on: []
+    responsible_function: monitoring/legal
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF12-S2
+    action: reopen conclusions and decide scoped claim wording
+    depends_on:
+    - WF12-S1
+    responsible_function: monitoring/legal
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: within recorded delegation
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  - id: WF12-S3
+    action: approve exact handoff or amend/withdraw claim
+    depends_on:
+    - WF12-S2
+    responsible_function: monitoring/legal
+    evidence_required:
+    - versioned inputs and observation/decision record
+    human_gate: named authorised human review before consequential decision
+    completion: required records exist, checks pass, unresolved limits retained
+    blocked_path: record owner/reason/next evidence; continue independent steps only
+  completion_conditions:
+  - step evidence and dependencies verified
+  - outputs linked and validated
+  - required approvals bound to exact versions
+  failure_paths:
+  - 'blocked: missing facts, evidence, authority or methods'
+  - 'failed: detected barrier or invalid data; route correction WF11'
+  retry_rules: Read current outcome first; preserve attempt ID and versions; no duplicate
+    external write; resume only on resolved dependency.
+  review_triggers:
+  - source/version/rights/configuration change
+  - contradictory evidence
+  - approval or delegation expiry
+  integration_boundary: Operator handoff; no orchestration, broadcast, research-provider
+    or regulator API implemented.

@@ -1,0 +1,31 @@
+checked_at: '2026-11-01'
+adoption_state: draft
+primary_text_access: 'partial: direct EUR-Lex URLs blocked by verification wall; official
+  indexed provisions and Commission pages checked'
+framework:
+  base: 2010/13/EU
+  amending_act: 2018/1808
+  reading_version: '2025-02-08'
+  later_consolidation: none found in official search; not a guarantee of exhaustiveness
+  article_numbering: amended 2010/13/EU
+  institutional_change: EMFA Articles 28–29 remove AVMSD Article 30b from 2025-02-08
+  review_2026: Commission evaluation/revision activity; no adopted replacement established
+    in this review
+national_adapter:
+  status: blocked
+  reason: No actual provider/jurisdiction supplied
+  resolve_with:
+  - service and jurisdiction facts
+  - current national acts and regulator/licence instructions
+  - competent authorised human review
+standards:
+  avmsd_presumption: No automatic WCAG/EN 301 549 Article 7 presumption established
+  adopted_technical_profiles: []
+  resolve_with: Actual delivery destination profile/version and specialist method
+    verification
+next_check_triggers:
+- operational adoption
+- legal proposal adoption or new consolidation
+- national rule or licence change
+- reporting period
+- source conflict

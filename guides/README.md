@@ -1,0 +1,5 @@
+# Guide retrieval
+
+Start with [scope](01-service-scope-and-jurisdiction.md#classify-the-activity) and the [document index](../control/document-index.yaml). Use [duties](02-accessibility-duties-and-progress.md#article-7-routing) after classification; [production](03-commissioning-production-and-acquisition.md#define-acceptance-before-creation-or-purchase) needs requirements and rights. [Delivery](04-access-feature-quality-and-delivery.md#trace-each-delivery-state) needs exact assets and routes. [Research](05-viewer-outcomes-and-research.md#select-outcomes-without-rewriting-their-ids) needs permissions and a versioned question. [Reporting](06-reporting-emergencies-and-corrective-action.md#prepare-and-approve-reports) needs national instructions and evidence. [Other duties](07-other-avmsd-duties-and-legal-interfaces.md#route-by-duty-and-service) routes specialist gaps.
+
+All guides are draft. Read section prerequisites and source limits before applying recommendations. Follow workflow IDs in the index; missing national inputs block legal conclusions while independent documentation continues. Do not retrieve fictional example law as authority.

@@ -1,0 +1,1112 @@
+schema_version: '1.0'
+template_kind: field_contracts
+instructions: Instantiate common and matching data contract. Replace field descriptions
+  with real values; examples use synthetic true. These contracts are not evidence
+  or approval. Validate resulting records, not the contracts themselves.
+common_required_fields:
+- id
+- schema_version
+- record_version
+- record_type
+- status
+- synthetic
+- scope
+- provenance
+- owner
+- created
+- updated
+- relationships
+- limitations
+- data
+common_contract:
+  id:
+    type: string
+    pattern: ^[A-Z][A-Z0-9-]+$
+  schema_version:
+    const: '1.0'
+  record_version: &id001
+    type: string
+    minLength: 1
+  record_type:
+    enum:
+    - source
+    - jurisdiction
+    - classification
+    - requirement
+    - target
+    - programme
+    - feature
+    - editorial
+    - rights
+    - supplier
+    - acceptance
+    - route
+    - delivery
+    - quality
+    - viewer
+    - evidence
+    - coverage
+    - action_plan
+    - improvement
+    - issue
+    - emergency
+    - report
+    - submission
+    - complaint
+    - monitoring
+    - delegation
+    - approval
+    - conclusion
+    - claim
+  status:
+    enum:
+    - draft
+    - in_review
+    - approved
+    - active
+    - completed
+    - blocked
+    - rejected
+    - superseded
+    - withdrawn
+  synthetic: &id003
+    type: boolean
+  scope:
+    type: object
+    properties:
+      service: *id001
+      period: *id001
+      region: *id001
+    required:
+    - service
+    - period
+    - region
+    additionalProperties: false
+  provenance:
+    type: array
+    items: *id001
+    minItems: 1
+  owner: *id001
+  created: *id001
+  updated: *id001
+  relationships: &id002
+    type: array
+    items: *id001
+  limitations: *id002
+  approval_id: *id001
+  data:
+    type: object
+types:
+  source:
+    type: object
+    properties:
+      source_id: *id001
+      version: *id001
+      locator: *id001
+      source_state:
+        enum:
+        - verified
+        - provisional
+        - superseded
+        - restricted
+      currency_checked: *id001
+    required:
+    - source_id
+    - version
+    - locator
+    - source_state
+    - currency_checked
+    additionalProperties: false
+  jurisdiction:
+    type: object
+    properties:
+      country: *id001
+      regulator: *id001
+      national_source_ids: *id002
+      resolved: *id003
+      legal_rationale: *id001
+      reporting_instructions: *id001
+    required:
+    - country
+    - regulator
+    - national_source_ids
+    - resolved
+    - legal_rationale
+    - reporting_instructions
+    additionalProperties: false
+  classification:
+    type: object
+    properties:
+      mode:
+        enum:
+        - linear
+        - on_demand
+        - vsp
+        - mixed
+        - other
+        - unresolved
+      jurisdiction_id: *id001
+      editorial_responsibility: *id003
+      economic_public_facts: *id001
+      jurisdiction_facts: *id001
+      applicability:
+        enum:
+        - applicable
+        - not_applicable
+        - unresolved
+      rationale: *id001
+    required:
+    - mode
+    - jurisdiction_id
+    - editorial_responsibility
+    - economic_public_facts
+    - jurisdiction_facts
+    - applicability
+    - rationale
+    additionalProperties: false
+  requirement:
+    type: object
+    properties:
+      source_id: *id001
+      source_version: *id001
+      clause: *id001
+      actor: *id001
+      authority:
+        enum:
+        - law
+        - regulator
+        - licence
+        - contract
+        - policy
+        - practice
+        - interpretation
+      applicability:
+        enum:
+        - applicable
+        - not_applicable
+        - unresolved
+      national_dependency: *id001
+      coverage_limits: *id001
+      evidence_required: *id002
+    required:
+    - source_id
+    - source_version
+    - clause
+    - actor
+    - authority
+    - applicability
+    - national_dependency
+    - coverage_limits
+    - evidence_required
+    additionalProperties: false
+  target:
+    type: object
+    properties:
+      requirement_id: *id001
+      feature:
+        enum:
+        - sdh
+        - ad
+        - signing
+        - spoken_subtitles
+      authority:
+        enum:
+        - national
+        - licence
+        - contract
+        - policy
+        - synthetic
+      threshold: &id005
+        type: number
+        minimum: 0
+      unit:
+        enum:
+        - minutes
+        - titles
+        - episodes
+        - percent
+      method_version: *id001
+      counting_rules: *id001
+      qualifying_population: *id001
+      exclusions: *id002
+      repeat_rule: *id001
+      period: *id001
+    required:
+    - requirement_id
+    - feature
+    - authority
+    - threshold
+    - unit
+    - method_version
+    - counting_rules
+    - qualifying_population
+    - exclusions
+    - repeat_rule
+    - period
+    additionalProperties: false
+  programme:
+    type: object
+    properties:
+      programme_key: *id001
+      episode: *id001
+      edition: *id001
+      language: *id001
+      duration_seconds:
+        type: number
+        exclusiveMinimum: 0
+      region: *id001
+      mode:
+        enum:
+        - live
+        - on_demand
+        - linear_recorded
+      asset_version: *id001
+    required:
+    - programme_key
+    - episode
+    - edition
+    - language
+    - duration_seconds
+    - region
+    - mode
+    - asset_version
+    additionalProperties: false
+  feature:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      feature:
+        enum:
+        - sdh
+        - ad
+        - signing
+        - spoken_subtitles
+        - translation_subtitles
+      language: *id001
+      asset_version: *id001
+      asset_role: *id001
+      stage:
+        enum:
+        - intended
+        - produced
+        - supplied
+        - packaged
+        - transmitted
+        - player_presented
+        - viewer_experienced
+      availability:
+        enum:
+        - present
+        - absent
+        - unknown
+      rights_id: *id001
+    required:
+    - programme_id
+    - programme_version
+    - feature
+    - language
+    - asset_version
+    - asset_role
+    - stage
+    - availability
+    - rights_id
+    additionalProperties: false
+  editorial:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      route_choice:
+        enum:
+        - integrated
+        - separate_ad
+        - hybrid
+        - extended
+        - no_separate_ad
+      rationale: *id001
+      visual_audit_evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      requirement_ids: *id002
+      conflicts_with_obligation: *id003
+      reviewer: *id001
+    required:
+    - programme_id
+    - programme_version
+    - route_choice
+    - rationale
+    - visual_audit_evidence_ids
+    - requirement_ids
+    - conflicts_with_obligation
+    - reviewer
+    additionalProperties: false
+  rights:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      languages:
+        type: array
+        items: *id001
+        minItems: 1
+      regions:
+        type: array
+        items: *id001
+        minItems: 1
+      uses:
+        type: array
+        items: *id001
+        minItems: 1
+      rights_state:
+        enum:
+        - confirmed
+        - uncertain
+        - not_granted
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - programme_version
+    - languages
+    - regions
+    - uses
+    - rights_state
+    - evidence_ids
+    additionalProperties: false
+  supplier:
+    type: object
+    properties:
+      programme_id: *id001
+      feature_ids: *id002
+      contract_locator: *id001
+      deliverables: *id002
+      correction_terms: *id001
+      evidence_ids: *id002
+    required:
+    - programme_id
+    - feature_ids
+    - contract_locator
+    - deliverables
+    - correction_terms
+    - evidence_ids
+    additionalProperties: false
+  acceptance:
+    type: object
+    properties:
+      supplier_id: *id001
+      quality_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      result:
+        enum:
+        - accepted
+        - conditional
+        - rejected
+        - blocked
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      rationale: *id001
+    required:
+    - supplier_id
+    - quality_ids
+    - result
+    - evidence_ids
+    - rationale
+    additionalProperties: false
+  route:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      feature_id: *id001
+      feature_version: *id001
+      expected_language: *id001
+      expected_feature:
+        enum:
+        - sdh
+        - ad
+        - signing
+        - spoken_subtitles
+      expected_episode: *id001
+      expected_edition: *id001
+      device: *id001
+      app_build: *id001
+      delivery_profile: *id001
+      region: *id001
+      steps:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - programme_version
+    - feature_id
+    - feature_version
+    - expected_language
+    - expected_feature
+    - expected_episode
+    - expected_edition
+    - device
+    - app_build
+    - delivery_profile
+    - region
+    - steps
+    additionalProperties: false
+  delivery:
+    type: object
+    properties: &id004
+      programme_id: *id001
+      programme_version: *id001
+      feature_id: *id001
+      route_id: *id001
+      source_result: *id001
+      source_vocabulary: *id001
+      adapter_rationale: *id001
+      result:
+        enum:
+        - pass
+        - fail
+        - cannot_tell
+        - cannot_tell
+        - not_tested
+        - blocked
+        - invalid_assumptions
+        - tool_error
+        - not_applicable
+      method_version: *id001
+      assumptions_valid: *id003
+      expected: *id001
+      observed: *id001
+      reviewer_competence: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - programme_version
+    - feature_id
+    - route_id
+    - source_result
+    - source_vocabulary
+    - adapter_rationale
+    - result
+    - method_version
+    - assumptions_valid
+    - expected
+    - observed
+    - reviewer_competence
+    - evidence_ids
+    additionalProperties: false
+  quality:
+    type: object
+    properties: *id004
+    required:
+    - programme_id
+    - programme_version
+    - feature_id
+    - route_id
+    - source_result
+    - source_vocabulary
+    - adapter_rationale
+    - result
+    - method_version
+    - assumptions_valid
+    - expected
+    - observed
+    - reviewer_competence
+    - evidence_ids
+    additionalProperties: false
+  viewer:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      route_id: *id001
+      outcome_ids:
+        type: array
+        items:
+          type: string
+          pattern: ^IDSO-(0[1-9]|1[0-9]|20)$
+        minItems: 1
+      finding:
+        enum:
+        - supported
+        - partly supported
+        - not supported
+        - insufficient evidence
+        - not evaluated
+        - not relevant with rationale
+      measure:
+        type: object
+        properties:
+          definition: *id001
+          denominator: *id001
+          unit_scale: *id001
+          method: *id001
+          context: *id001
+          instrument_version: *id001
+          uncertainty: *id001
+          interpretation_limits: *id001
+        required:
+        - definition
+        - denominator
+        - unit_scale
+        - method
+        - context
+        - instrument_version
+        - uncertainty
+        - interpretation_limits
+        additionalProperties: false
+      observations: *id002
+      reported_findings: *id002
+      negative_cases: *id002
+      missing_viewers: *id002
+      sample_rationale: *id001
+      data_authority: *id001
+      model_use:
+        enum:
+        - prohibited
+        - approved_aggregate_only
+        - synthetic_only
+      children_protection_data: *id003
+      commercial_reuse: *id003
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - programme_version
+    - route_id
+    - outcome_ids
+    - finding
+    - measure
+    - observations
+    - reported_findings
+    - negative_cases
+    - missing_viewers
+    - sample_rationale
+    - data_authority
+    - model_use
+    - children_protection_data
+    - commercial_reuse
+    - evidence_ids
+    additionalProperties: false
+  evidence:
+    type: object
+    properties:
+      kind:
+        enum:
+        - technical
+        - participant
+        - document
+        - synthetic
+      locator: *id001
+      content_hash: *id001
+      access:
+        enum:
+        - public_synthetic
+        - restricted
+        - public_cleared
+      retention: *id001
+      model_use: *id001
+      method_version: *id001
+      observation: *id001
+    required:
+    - kind
+    - locator
+    - content_hash
+    - access
+    - retention
+    - model_use
+    - method_version
+    - observation
+    additionalProperties: false
+  coverage:
+    type: object
+    properties:
+      target_id: *id001
+      feature:
+        enum:
+        - sdh
+        - ad
+        - signing
+        - spoken_subtitles
+      stage:
+        enum:
+        - intended
+        - produced
+        - supplied
+        - usable
+      numerator: *id005
+      denominator:
+        type: number
+        exclusiveMinimum: 0
+      numerator_unit:
+        enum:
+        - minutes
+        - titles
+        - episodes
+      denominator_unit:
+        enum:
+        - minutes
+        - titles
+        - episodes
+      method_version: *id001
+      population: *id001
+      denominator_inventory:
+        type: array
+        items:
+          type: object
+          properties:
+            programme_id: *id001
+            programme_version: *id001
+            start: *id005
+            end: *id005
+          required:
+          - programme_id
+          - programme_version
+          - start
+          - end
+          additionalProperties: false
+        minItems: 1
+      exclusions: *id002
+      repeats: *id001
+      acquisitions: *id001
+      languages:
+        type: array
+        items: *id001
+        minItems: 1
+      missing_failed: *id002
+      intervals:
+        type: array
+        items:
+          type: object
+          properties:
+            programme_id: *id001
+            programme_version: *id001
+            start: *id005
+            end: *id005
+          required:
+          - programme_id
+          - programme_version
+          - start
+          - end
+          additionalProperties: false
+        minItems: 1
+      delivery_ids: *id002
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - target_id
+    - feature
+    - stage
+    - numerator
+    - denominator
+    - numerator_unit
+    - denominator_unit
+    - method_version
+    - population
+    - denominator_inventory
+    - exclusions
+    - repeats
+    - acquisitions
+    - languages
+    - missing_failed
+    - intervals
+    - delivery_ids
+    - evidence_ids
+    additionalProperties: false
+  action_plan:
+    type: object
+    properties:
+      requirement_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      baseline_coverage_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      target_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      action_ids: *id002
+      resources: *id001
+      communication_required: *id003
+      review_date: *id001
+    required:
+    - requirement_ids
+    - baseline_coverage_ids
+    - target_ids
+    - action_ids
+    - resources
+    - communication_required
+    - review_date
+    additionalProperties: false
+  improvement:
+    type: object
+    properties:
+      plan_id: *id001
+      baseline_id: *id001
+      current_id: *id001
+      progress:
+        enum:
+        - improved
+        - unchanged
+        - worsened
+        - cannot_compare
+      reconciliation: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - plan_id
+    - baseline_id
+    - current_id
+    - progress
+    - reconciliation
+    - evidence_ids
+    additionalProperties: false
+  issue:
+    type: object
+    properties:
+      programme_id: *id001
+      programme_version: *id001
+      origin_id: *id001
+      impact: *id001
+      correction: *id001
+      correction_version: *id001
+      retest_id: *id001
+      resolution:
+        enum:
+        - open
+        - corrected_pending_retest
+        - verified_resolved
+        - blocked
+      due_date: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - programme_version
+    - origin_id
+    - impact
+    - correction
+    - correction_version
+    - retest_id
+    - resolution
+    - due_date
+    - evidence_ids
+    additionalProperties: false
+  emergency:
+    type: object
+    properties:
+      mode:
+        enum:
+        - exercise
+        - incident
+      protocol_id: *id001
+      message_version: *id001
+      accessible_variants: *id002
+      missing_variants: *id002
+      activation_time: *id001
+      transmission_time: *id001
+      urgent_correction: *id001
+      exercise_only: *id003
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - mode
+    - protocol_id
+    - message_version
+    - accessible_variants
+    - missing_variants
+    - activation_time
+    - transmission_time
+    - urgent_correction
+    - exercise_only
+    - evidence_ids
+    additionalProperties: false
+  report:
+    type: object
+    properties:
+      period: *id001
+      figures:
+        type: array
+        items:
+          type: object
+          properties:
+            coverage_id: *id001
+            numerator: *id005
+            denominator: *id005
+          required:
+          - coverage_id
+          - numerator
+          - denominator
+          additionalProperties: false
+        minItems: 1
+      conclusion_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      wording: *id001
+      limitations: *id002
+      recipient: *id001
+      duty_holder:
+        enum:
+        - provider
+        - member_state
+      deadline_source_actor:
+        enum:
+        - provider
+        - member_state
+        - synthetic
+    required:
+    - period
+    - figures
+    - conclusion_ids
+    - evidence_ids
+    - wording
+    - limitations
+    - recipient
+    - duty_holder
+    - deadline_source_actor
+    additionalProperties: false
+  submission:
+    type: object
+    properties:
+      report_id: *id001
+      report_version: *id001
+      report_digest: *id001
+      approval_id: *id001
+      operation:
+        enum:
+        - handoff
+        - submitted
+      receipt: *id001
+      transaction_id: *id001
+      channel: *id001
+      idempotency_key: *id001
+    required:
+    - report_id
+    - report_version
+    - report_digest
+    - approval_id
+    - operation
+    - receipt
+    - transaction_id
+    - channel
+    - idempotency_key
+    additionalProperties: false
+  complaint:
+    type: object
+    properties:
+      programme_id: *id001
+      route_id: *id001
+      channel: *id001
+      barrier: *id001
+      accessible_contact_test_id: *id001
+      issue_id: *id001
+      response_due_basis: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - programme_id
+    - route_id
+    - channel
+    - barrier
+    - accessible_contact_test_id
+    - issue_id
+    - response_due_basis
+    - evidence_ids
+    additionalProperties: false
+  monitoring:
+    type: object
+    properties:
+      trigger: *id001
+      affected_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      next_action: *id001
+      review_due: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+    required:
+    - trigger
+    - affected_ids
+    - next_action
+    - review_due
+    - evidence_ids
+    additionalProperties: false
+  delegation:
+    type: object
+    properties:
+      human_name: *id001
+      authority_basis: *id001
+      operations:
+        type: array
+        items: *id001
+        minItems: 1
+      resources:
+        type: array
+        items: *id001
+        minItems: 1
+      valid_from: *id001
+      expires: *id001
+      revoked: *id003
+      limits: *id001
+      escalation: *id001
+    required:
+    - human_name
+    - authority_basis
+    - operations
+    - resources
+    - valid_from
+    - expires
+    - revoked
+    - limits
+    - escalation
+    additionalProperties: false
+  approval:
+    type: object
+    properties:
+      target_id: *id001
+      target_version: *id001
+      target_digest:
+        type: string
+        pattern: ^[a-f0-9]{64}$
+      dependency_digests:
+        type: object
+        additionalProperties:
+          type: string
+          pattern: ^[a-f0-9]{64}$
+      human_name: *id001
+      delegation_id: *id001
+      authority_basis: *id001
+      approved_scope:
+        type: object
+        properties:
+          service: *id001
+          period: *id001
+          region: *id001
+        required:
+        - service
+        - period
+        - region
+        additionalProperties: false
+      approval_date: *id001
+      valid_until: *id001
+    required:
+    - target_id
+    - target_version
+    - target_digest
+    - dependency_digests
+    - human_name
+    - delegation_id
+    - authority_basis
+    - approved_scope
+    - approval_date
+    - valid_until
+    additionalProperties: false
+  conclusion:
+    type: object
+    properties:
+      requirement_id: *id001
+      classification_id: *id001
+      result:
+        enum:
+        - met
+        - not_met
+        - cannot_conclude
+        - not_applicable
+      rationale: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      coverage_ids: *id002
+      quality_ids: *id002
+      viewer_ids: *id002
+      unresolved_issues: *id002
+    required:
+    - requirement_id
+    - classification_id
+    - result
+    - rationale
+    - evidence_ids
+    - coverage_ids
+    - quality_ids
+    - viewer_ids
+    - unresolved_issues
+    additionalProperties: false
+  claim:
+    type: object
+    properties:
+      conclusion_id: *id001
+      wording: *id001
+      evidence_ids:
+        type: array
+        items: *id001
+        minItems: 1
+      publication_state:
+        enum:
+        - draft
+        - handoff
+        - published
+        - withdrawn
+      destination: *id001
+      valid_until: *id001
+      withdrawal_owner: *id001
+      receipt: *id001
+    required:
+    - conclusion_id
+    - wording
+    - evidence_ids
+    - publication_state
+    - destination
+    - valid_until
+    - withdrawal_owner
+    - receipt
+    additionalProperties: false
+result_adapters:
+  ATLF-1.1:
+    source_id: X01
+    source_locator: ATLF-14 Result vocabulary
+    normalised_version: AVMSD-records-1.0
+    mapping:
+      Pass: pass
+      Fail: fail
+      Cannot tell: cannot_tell
+      Not applicable: not_applicable
+      Not tested: not_tested
+      Blocked: blocked
+      Tool error: tool_error
+    review_rule: Preserve raw result and context. Incomplete/needs review remains
+      tool detail and requires competent classification; never pass by default. invalid_assumptions
+      is a local extension, not an ATLF source value.

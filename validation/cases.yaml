@@ -1,0 +1,716 @@
+version: '1.0'
+classification: synthetic developer fixtures; not an independent benchmark
+recipe: Deep-copy the named base bundle then apply exact field mutations to instantiate
+  valid/invalid records. Expected routes/statuses are developer reference decisions;
+  validator checks specified rejection codes, not AI routing accuracy.
+cases:
+- id: AV-T01
+  title: AD master present but delivered rendition fails
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.result
+    value: fail
+  expected_error_codes:
+  - E_DELIVERY
+  - E_RETEST
+  expected_route: WF11
+  expected_status: delivery fail; positive conclusion blocked
+  prohibited_conclusions:
+  - Master presence proves usable AD
+  evidence_required:
+  - actual delivered route retest
+- id: AV-T02
+  title: Translation subtitles counted as SDH
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: FEAT-2
+    path: data.feature
+    value: translation_subtitles
+  - record_id: COV-CURRENT
+    path: data.feature
+    value: sdh
+  expected_error_codes:
+  - E_COUNT
+  - E_DELIVERY
+  expected_route: WF06
+  expected_status: SDH provision unsubstantiated
+  prohibited_conclusions:
+  - Dialogue translation establishes complete SDH
+  evidence_required:
+  - specialist SDH review and matching specification
+- id: AV-T03
+  title: Text subtitles substituted for signing
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: FEAT-2
+    path: data.feature
+    value: sdh
+  - record_id: COV-CURRENT
+    path: data.feature
+    value: signing
+  expected_error_codes:
+  - E_DELIVERY
+  expected_route: WF03
+  expected_status: signing target unresolved
+  prohibited_conclusions:
+  - Text track equivalent to sign language
+  evidence_required:
+  - target language and signed asset assessment
+- id: AV-T04
+  title: High satisfaction with unmet target
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: TARGET-1
+    path: data.threshold
+    value: 80
+  expected_error_codes:
+  - E_CONCLUSION
+  expected_route: WF03
+  expected_status: requirement not_met; claim blocked
+  prohibited_conclusions:
+  - Satisfaction cancels missed target
+  evidence_required:
+  - applicable target plus qualifying calculation
+- id: AV-T05
+  title: Target met but meaning-changing caption quality failure
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: QUALITY-1
+    path: data.result
+    value: fail
+  expected_error_codes:
+  - E_SUPPLIER
+  - E_CONCLUSION
+  expected_route: WF11
+  expected_status: quality fail; conclusion blocked
+  prohibited_conclusions:
+  - Quota met establishes quality
+  evidence_required:
+  - correct meaning and versioned specialist retest
+- id: AV-T06
+  title: Catalogue growth lowers percentage despite increased accessible minutes
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: COV-CURRENT
+    path: data.denominator
+    value: 50
+  expected_error_codes:
+  - E_CONCLUSION
+  - E_REPORT
+  expected_route: WF08
+  expected_status: recalculate target and report; no inferred improvement
+  prohibited_conclusions:
+  - More minutes necessarily means improved coverage
+  evidence_required:
+  - catalogue and method reconciliation
+- id: AV-T07
+  title: Overlapping intervals double counted
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: COV-CURRENT
+    path: data.intervals
+    value:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 600
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 60
+  expected_error_codes:
+  - E_OVERLAP
+  - E_COUNT
+  expected_route: WF08
+  expected_status: invalid calculation
+  prohibited_conclusions:
+  - Overlapping durations count twice
+  evidence_required:
+  - unique eligible intervals and repeat rules
+- id: AV-T08
+  title: Wrong edition or language receives a valid track
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: FEAT-2
+    path: data.programme_version
+    value: cut-OTHER
+  - record_id: FEAT-2
+    path: data.language
+    value: fr-FR
+  expected_error_codes:
+  - E_ASSET
+  - E_RIGHTS
+  expected_route: WF06
+  expected_status: asset mismatch; retest blocked
+  prohibited_conclusions:
+  - Any loadable track matches the episode
+  evidence_required:
+  - exact edition/language/rights match
+- id: AV-T09
+  title: Track disappears after advert or seeking
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.result
+    value: fail
+  - record_id: DELIV-PASS
+    path: data.observed
+    value: Track lost after advert
+  expected_error_codes:
+  - E_DELIVERY
+  expected_route: WF11
+  expected_status: delivery fail
+  prohibited_conclusions:
+  - Initial playback establishes persistence
+  evidence_required:
+  - advert/seek/resume sequence evidence
+- id: AV-T10
+  title: No-separate-AD editorial route contradicts obligation
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: EDITORIAL-1
+    path: data.route_choice
+    value: no_separate_ad
+  - record_id: EDITORIAL-1
+    path: data.conflicts_with_obligation
+    value: true
+  expected_error_codes:
+  - E_EDITORIAL
+  expected_route: WF03
+  expected_status: legal/editorial conflict escalated
+  prohibited_conclusions:
+  - Audio-led label waives applicable AD duty
+  evidence_required:
+  - applicable requirement and authorised editorial/legal review
+- id: AV-T11
+  title: Article 7 applied automatically to platform uploads
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLASS-1
+    path: data.mode
+    value: vsp
+  - record_id: REQ-1
+    path: data.clause
+    value: Article 7(1)
+  expected_error_codes:
+  - E_VSP
+  expected_route: WF02
+  expected_status: scope needs separate assessment
+  prohibited_conclusions:
+  - Every VSP upload has Article 7 duties
+  evidence_required:
+  - classification of editorial service versus hosted content
+- id: AV-T12
+  title: Mixed business lacks separate editorial classification
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLASS-1
+    path: data.mode
+    value: mixed
+  expected_error_codes:
+  - E_SCOPE
+  expected_route: WF02
+  expected_status: classification unresolved
+  prohibited_conclusions:
+  - One mixed classification approves every activity
+  evidence_required:
+  - separate service facts and jurisdiction decisions
+- id: AV-T13
+  title: Member State reporting cycle used as provider deadline
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: REPORT-1
+    path: data.deadline_source_actor
+    value: member_state
+  expected_error_codes:
+  - E_DEADLINE
+  expected_route: WF09
+  expected_status: provider deadline blocked
+  prohibited_conclusions:
+  - Member State three-year cycle is provider timetable
+  evidence_required:
+  - national provider reporting instruction
+- id: AV-T14
+  title: European-works percentage used as accessibility target
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: REQ-1
+    path: data.clause
+    value: Article 13(1)
+  expected_error_codes:
+  - E_TARGET
+  expected_route: WF03
+  expected_status: accessibility target unsupported
+  prohibited_conclusions:
+  - 30% European works means accessibility coverage
+  evidence_required:
+  - exact national access-feature target
+- id: AV-T15
+  title: Live or small provider assumed exempt
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLASS-1
+    path: data.applicability
+    value: not_applicable
+  - record_id: PROG-1
+    path: data.mode
+    value: live
+  expected_error_codes:
+  - E_SCOPE
+  expected_route: WF02
+  expected_status: positive conclusion blocked; legal assessment needed
+  prohibited_conclusions:
+  - Live or small automatically exempt
+  evidence_required:
+  - national proportionality and scope reasoning
+- id: AV-T16
+  title: Emergency missing variant without urgent correction
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: EMERGENCY-1
+    path: data.urgent_correction
+    value: ' '
+  expected_error_codes:
+  - E_EMERGENCY
+  expected_route: WF10
+  expected_status: urgent access correction/escalation
+  prohibited_conclusions:
+  - Routine sign-off must delay all emergency messages
+  evidence_required:
+  - approved rapid protocol and accessible variants
+- id: AV-T17
+  title: Report figures changed after approval
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: REPORT-1
+    path: data.figures.0.numerator
+    value: 12
+  expected_error_codes:
+  - E_BINDING
+  - E_REPORT
+  expected_route: WF09
+  expected_status: approval invalidated
+  prohibited_conclusions:
+  - Old approval covers amended figures
+  evidence_required:
+  - recomputed report and exact reapproval
+- id: AV-T18
+  title: Valid full synthetic programme cycle
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations: []
+  expected_error_codes: []
+  expected_route: WF12
+  expected_status: controlled review handoff only
+  prohibited_conclusions:
+  - Synthetic success proves a real provider complies
+  evidence_required:
+  - linked failure/correction/retest, bounded report and approvals
+- id: AV-T19
+  title: Missing national rules or unresolved jurisdiction
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: JUR-1
+    path: data.resolved
+    value: false
+  expected_error_codes:
+  - E_SCOPE
+  expected_route: WF02
+  expected_status: affected legal conclusions blocked
+  prohibited_conclusions:
+  - Fictional adapter fills missing country law
+  evidence_required:
+  - real jurisdiction and current national rules
+- id: AV-T20
+  title: Expired delegation
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELEG-1
+    path: data.expires
+    value: '2026-10-31'
+  expected_error_codes:
+  - E_AUTHORITY
+  expected_route: WF02
+  expected_status: consequential actions stopped
+  prohibited_conclusions:
+  - Silence renews authority
+  evidence_required:
+  - valid recorded delegation
+- id: AV-T21
+  title: Unknown evidence or asset reference
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.feature_id
+    value: FEAT-UNKNOWN
+  expected_error_codes:
+  - E_REF
+  expected_route: WF06
+  expected_status: execution blocked
+  prohibited_conclusions:
+  - Dangling reference is evidence
+  evidence_required:
+  - resolved exact asset identity
+- id: AV-T22
+  title: Biased sample hides excluded and severe minority viewers
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: VIEW-1
+    path: data.missing_viewers
+    value:
+    - People unable to activate feature not recruited
+  - record_id: VIEW-1
+    path: data.negative_cases
+    value:
+    - One fictional listener missed safety instruction
+  expected_error_codes:
+  - E_VIEWER
+  expected_route: WF07
+  expected_status: split/constrain finding and investigate
+  prohibited_conclusions:
+  - Positive average erases missing or severe cases
+  evidence_required:
+  - inclusive recruitment and negative-case analysis
+- id: AV-T23
+  title: Children protection data reused commercially
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: VIEW-1
+    path: data.children_protection_data
+    value: true
+  - record_id: VIEW-1
+    path: data.commercial_reuse
+    value: true
+  expected_error_codes:
+  - E_PRIVACY
+  expected_route: WF07
+  expected_status: reuse stopped
+  prohibited_conclusions:
+  - Research pipeline permits prohibited reuse
+  evidence_required:
+  - privacy/legal review and permitted minimised dataset
+- id: AV-T24
+  title: Superseded source left active
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: SRC-1
+    path: data.source_state
+    value: superseded
+  expected_error_codes:
+  - E_STALE
+  expected_route: WF01
+  expected_status: source rejected from active retrieval
+  prohibited_conclusions:
+  - Superseded text is current law
+  evidence_required:
+  - current approved source and scope re-evaluation
+- id: AV-T25
+  title: Invalid assessment assumptions silently passed
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.assumptions_valid
+    value: false
+  expected_error_codes:
+  - E_ASSUMPTION
+  expected_route: WF06
+  expected_status: invalid_assumptions; no pass
+  prohibited_conclusions:
+  - Invalid setup establishes working delivery
+  evidence_required:
+  - valid timing/profile/reference setup and rerun
+- id: AV-T26
+  title: Supplier declaration with failed quality evidence
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: QUALITY-1
+    path: data.result
+    value: not_tested
+  expected_error_codes:
+  - E_SUPPLIER
+  expected_route: WF04
+  expected_status: supplier acceptance blocked
+  prohibited_conclusions:
+  - Declaration alone establishes quality
+  evidence_required:
+  - competent independent assessment evidence
+- id: AV-T27
+  title: Claim publication without exact approved wording/version
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLAIM-1
+    path: data.wording
+    value: All services fully comply with AVMSD
+  expected_error_codes:
+  - E_BINDING
+  expected_route: WF12
+  expected_status: claim handoff blocked
+  prohibited_conclusions:
+  - Old approval authorises broader wording
+  evidence_required:
+  - exact approved scoped claim/version
+- id: AV-T28
+  title: Approved claim missing evidence
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLAIM-1
+    path: data.evidence_ids
+    value: []
+  expected_error_codes:
+  - E_SCHEMA
+  expected_route: WF12
+  expected_status: claim rejected
+  prohibited_conclusions:
+  - Approval label supplies evidence
+  evidence_required:
+  - traceable supporting evidence and approved conclusion
+- id: AV-T29
+  title: Unnamed or unauthorised approver
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: APP-CLAIM
+    path: data.human_name
+    value: ' '
+  expected_error_codes:
+  - E_AUTHORITY
+  expected_route: WF12
+  expected_status: claim approval invalid
+  prohibited_conclusions:
+  - Any string proves named authority
+  evidence_required:
+  - verified named human and valid delegation
+- id: AV-T30
+  title: Submission asserted without receipt
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: SUBMIT-1
+    path: data.operation
+    value: submitted
+  - record_id: SUBMIT-1
+    path: data.receipt
+    value: ' '
+  - record_id: SUBMIT-1
+    path: data.transaction_id
+    value: ' '
+  expected_error_codes:
+  - E_RECEIPT
+  expected_route: WF09
+  expected_status: prepared/handoff; not confirmed submitted
+  prohibited_conclusions:
+  - Prepared artifact equals filed report
+  evidence_required:
+  - verified matching submission receipt
+- id: AV-T31
+  title: Tool error adapted to pass
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.source_result
+    value: tool_error
+  expected_error_codes:
+  - E_ADAPTER
+  expected_route: WF06
+  expected_status: tool_error retained
+  prohibited_conclusions:
+  - Error normalises to success
+  evidence_required:
+  - valid execution and explicit adapter
+- id: AV-T32
+  title: Incompatible coverage units
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: COV-CURRENT
+    path: data.denominator_unit
+    value: titles
+  expected_error_codes:
+  - E_UNITS
+  expected_route: WF08
+  expected_status: calculation rejected
+  prohibited_conclusions:
+  - Minutes divided by titles is valid share
+  evidence_required:
+  - matching numerator/denominator units
+- id: AV-T33
+  title: Completed step lacks evidence
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: $bundle
+    path: executions.0.steps.0.evidence_ids
+    value: []
+  expected_error_codes:
+  - E_STEP
+  expected_route: WF02
+  expected_status: step incomplete
+  prohibited_conclusions:
+  - Complete flag is proof of work
+  evidence_required:
+  - step-specific execution/decision evidence
+- id: AV-T34
+  title: Invalid pending-to-complete transition
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: $bundle
+    path: executions.0.steps.0.history
+    value:
+    - to: complete
+  expected_error_codes:
+  - E_TRANSITION
+  expected_route: WF02
+  expected_status: transition rejected
+  prohibited_conclusions:
+  - State bypass establishes completion
+  evidence_required:
+  - valid execution states and evidence
+- id: AV-T35
+  title: False resolution without passing retest
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: ISSUE-1
+    path: data.retest_id
+    value: DELIV-FAIL
+  expected_error_codes:
+  - E_RETEST
+  expected_route: WF11
+  expected_status: issue remains unresolved
+  prohibited_conclusions:
+  - Ticket closed means restored access
+  evidence_required:
+  - matching passing retest of applied correction
+- id: AV-T36
+  title: Claim missing approval binding
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: CLAIM-1
+    path: approval_id
+    delete: true
+  expected_error_codes:
+  - E_SCHEMA
+  expected_route: WF12
+  expected_status: approved claim rejected
+  prohibited_conclusions:
+  - Approved status alone authorises handoff
+  evidence_required:
+  - exact named authorised approval
+- id: AV-T37
+  title: Blocked retry without dependency evidence
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: $bundle
+    path: executions.0.steps.0.history
+    value:
+    - to: blocked
+    - to: running
+    - to: complete
+  expected_error_codes:
+  - E_TRANSITION
+  expected_route: WF02
+  expected_status: resume rejected
+  prohibited_conclusions:
+  - Elapsed time resolves dependency
+  evidence_required:
+  - actual resolved-dependency evidence
+- id: AV-T38
+  title: Unknown source
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: REQ-1
+    path: data.source_id
+    value: UNKNOWN
+  expected_error_codes:
+  - E_SOURCE
+  expected_route: WF01
+  expected_status: source claim rejected
+  prohibited_conclusions:
+  - Invented citation supports requirement
+  evidence_required:
+  - retrieved current source and exact provision
+- id: AV-T39
+  title: False progress across unlike provision stages
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: IMPROVE-1
+    path: data.progress
+    value: improved
+  expected_error_codes:
+  - E_PROGRESS
+  expected_route: WF08
+  expected_status: comparison constrained
+  prohibited_conclusions:
+  - Produced baseline and usable current provision directly establish improvement
+  evidence_required:
+  - same-stage period and catalogue reconciliation
+- id: AV-T40
+  title: Denominator drops difficult programmes
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: COV-CURRENT
+    path: data.denominator_inventory
+    value:
+    - programme_id: PROG-1
+      programme_version: cut-1
+      start: 0
+      end: 600
+  expected_error_codes:
+  - E_COUNT
+  expected_route: WF08
+  expected_status: denominator rejected
+  prohibited_conclusions:
+  - Removing inaccessible programmes silently preserves honest coverage
+  evidence_required:
+  - complete eligible population and justified exclusions
+- id: AV-T41
+  title: Cannot tell preserved during normalisation
+  synthetic: true
+  base: examples/synthetic-programme-and-service-cycle.yaml
+  mutations:
+  - record_id: DELIV-PASS
+    path: data.source_result
+    value: Cannot tell
+  expected_error_codes:
+  - E_ADAPTER
+  expected_route: WF06
+  expected_status: cannot_tell; no pass
+  prohibited_conclusions:
+  - Uncertainty silently becomes pass
+  evidence_required:
+  - ATLF-14 source detail and competent result classification

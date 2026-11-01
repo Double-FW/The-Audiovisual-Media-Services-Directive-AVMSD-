@@ -1,0 +1,221 @@
+version: 0.1.0
+requirements:
+- id: A7-1
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(1)
+  actor: Member State ensures provider accessibility
+  summary: continuous progressive accessibility
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF03
+  status: draft
+- id: A7-2P
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(2), sentence 1
+  actor: Member State ensures regular provider reporting
+  summary: national provider reporting
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF09
+  status: draft
+- id: A7-2M
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(2), sentence 2
+  actor: Member State
+  summary: Commission reporting from 2022 then every three years
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF09
+  status: draft
+- id: A7-3
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(3)
+  actor: Member State encouragement; provider plan communication
+  summary: action plans and communication
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF03
+  status: draft
+- id: A7-4
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(4)
+  actor: Member State
+  summary: single accessible national online contact point
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF11
+  status: draft
+- id: A7-5
+  source_id: L01
+  source_version: '2025-02-08'
+  amending_source: L02
+  clause: Article 7(5)
+  actor: Member State
+  summary: accessible public emergency information
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Actual national provisions, duty allocation, methods and timetable
+    required before provider decision
+  coverage_limits: EU routing only; no universal access quota, quality threshold or
+    individual-provider approval
+  evidence_required:
+  - approved classification and jurisdiction
+  - verified applicable national rule
+  - scope-specific implementation and assessment evidence
+  workflow_id: WF10
+  status: draft
+- id: OTHER-MINORS
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 6, 6a
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: safeguarding/privacy
+- id: OTHER-COMMERCIAL
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 9–11, 19–26
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: commercial/broadcast counsel
+- id: OTHER-WORKS
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 13–17
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: catalogue/broadcast compliance
+- id: OTHER-VSP
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 28a–28b
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: platform trust and safety
+- id: OTHER-INTEGRITY
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 5, 7a–7b
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: product/legal
+- id: OTHER-REMEDIES
+  source_id: L01
+  source_version: '2025-02-08'
+  clause: Articles 14–15, 28
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: broadcast legal
+- id: OTHER-COOPERATION
+  source_id: L03
+  source_version: 2024/1083
+  clause: Articles 30, 30a, 33a; EMFA Articles 28–29
+  actor: Determine from exact provision and national implementation
+  summary: Specialist routing module
+  authority_type: law
+  applicability: unresolved
+  national_dependency: Full provision-level and national review required
+  coverage_limits: Routing only; not assessed or approved
+  evidence_required:
+  - competent specialist assessment
+  workflow_id: WF03
+  status: blocked
+  owner_function: legal/policy

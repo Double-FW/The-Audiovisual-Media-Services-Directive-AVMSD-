@@ -1,0 +1,231 @@
+version: 0.1.0
+documents:
+- id: AV-G01
+  path: guides/01-service-scope-and-jurisdiction.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Source verification
+  - Service and jurisdiction intake
+  section_anchors:
+  - purpose-and-trigger
+  - classify-the-activity
+  - establish-jurisdiction-and-national-rules
+  - build-the-jurisdiction-adapter
+  - evidence-decisions-and-next-workflow
+  source_ids:
+  - L01
+  - L02
+  - L04
+  - G01
+  prerequisites:
+  - service-context
+  output_record_types:
+  - jurisdiction
+  - classification
+  workflow_ids:
+  - WF01
+  - WF02
+- id: AV-G02
+  path: guides/02-accessibility-duties-and-progress.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Legal target and action planning
+  - Provision and progress calculation
+  section_anchors:
+  - purpose-and-trigger
+  - article-7-routing
+  - plan-measurable-improvement
+  - interpret-five-separate-findings
+  - outputs-and-escalation
+  source_ids:
+  - L01
+  - L02
+  - B01
+  prerequisites:
+  - classification
+  - jurisdiction
+  output_record_types:
+  - requirement
+  - target
+  - action_plan
+  - coverage
+  - conclusion
+  workflow_ids:
+  - WF03
+  - WF08
+- id: AV-G03
+  path: guides/03-commissioning-production-and-acquisition.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Commissioning and acquisition
+  - Production and editorial review
+  section_anchors:
+  - purpose-and-trigger
+  - define-acceptance-before-creation-or-purchase
+  - plan-meaning-through-sound-and-picture
+  - coordinate-production-and-suppliers
+  - outputs-stops-and-next-workflow
+  source_ids:
+  - D01
+  - D02
+  - D03
+  - D06
+  - D07
+  - X01
+  prerequisites:
+  - requirement
+  - target
+  output_record_types:
+  - programme
+  - feature
+  - editorial
+  - rights
+  - supplier
+  - acceptance
+  workflow_ids:
+  - WF04
+  - WF05
+- id: AV-G04
+  path: guides/04-access-feature-quality-and-delivery.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Packaging and delivery verification
+  - Complaint correction and retest
+  section_anchors:
+  - purpose-and-trigger
+  - assess-distinct-features
+  - trace-each-delivery-state
+  - execute-and-preserve-observations
+  - interpret-boundaries-and-correct-failures
+  - outputs-and-next-workflow
+  source_ids:
+  - D01
+  - D02
+  - D03
+  - D04
+  - D05
+  - X01
+  prerequisites:
+  - programme
+  - feature
+  - rights
+  output_record_types:
+  - route
+  - delivery
+  - quality
+  - evidence
+  - issue
+  workflow_ids:
+  - WF06
+  - WF11
+- id: AV-G05
+  path: guides/05-viewer-outcomes-and-research.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Viewer research
+  section_anchors:
+  - purpose-and-trigger
+  - select-outcomes-without-rewriting-their-ids
+  - recruit-beyond-current-successful-viewers
+  - define-and-validate-measures
+  - protect-evidence-and-interpret-carefully
+  - outputs-decisions-and-next-workflow
+  source_ids:
+  - D03
+  - D04
+  - D08
+  - D09
+  - D10
+  prerequisites:
+  - classification
+  - feature
+  - delivery
+  output_record_types:
+  - viewer
+  - evidence
+  - issue
+  workflow_ids:
+  - WF07
+- id: AV-G06
+  path: guides/06-reporting-emergencies-and-corrective-action.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Regulator reporting and plan communication
+  - Emergency exercise and response
+  - Complaint correction and retest
+  - Monitoring reassessment and claim review
+  section_anchors:
+  - purpose-and-trigger
+  - prepare-and-approve-reports
+  - emergency-preparedness-and-response
+  - complaints-and-correction
+  - monitor-decide-and-hand-off
+  source_ids:
+  - L01
+  - L02
+  - B01
+  - D06
+  - D07
+  prerequisites:
+  - jurisdiction
+  - requirement
+  - coverage
+  output_record_types:
+  - report
+  - submission
+  - complaint
+  - emergency
+  - issue
+  - monitoring
+  - approval
+  - claim
+  workflow_ids:
+  - WF09
+  - WF10
+  - WF11
+  - WF12
+- id: AV-G07
+  path: guides/07-other-avmsd-duties-and-legal-interfaces.md
+  status: draft
+  authority_type: repository_guidance
+  tasks:
+  - Service and jurisdiction intake
+  - Legal target and action planning
+  - Monitoring reassessment and claim review
+  section_anchors:
+  - purpose-and-trigger
+  - route-by-duty-and-service
+  - preserve-numerical-and-data-distinctions
+  - assess-interfaces-through-separate-legal-records
+  - outputs-decisions-and-next-workflow
+  source_ids:
+  - L01
+  - L02
+  - L03
+  - L04
+  - G01
+  - G02
+  - B01
+  prerequisites:
+  - classification
+  - jurisdiction
+  output_record_types:
+  - requirement
+  - conclusion
+  - issue
+  workflow_ids:
+  - WF02
+  - WF03
+  - WF12
+entry_points:
+- README.md
+- AGENTS.md
+- guides/README.md
+- records/README.md
+- validation/README.md
