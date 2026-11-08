@@ -200,15 +200,3 @@ Each link identifies an exact file at a pinned commit in a Double-FW repository 
 **Access:** repository confirmed public and pinned file retrieved successfully on 8 November 2026.
 
 **Relevant units:** Sections 4–10: communication, redundancies, patterns, recall, feedback and choice.
-
-## 6. Review results and remaining dependencies
-
-The matrix retains **45 mapping rows**: 13 registered requirement routes, 26 delivery/viewer controls and 6 agent/validation controls. Fit distribution: 19 partial, 4 gap, 5 contextual and 17 direct practice. These counts describe mapping support, not percentages of AVMSD legal coverage.
-
-The source catalogue now contains **12 publicly available files across nine Double-FW repositories**. Seven sources from four private repositories have been removed, including six previously marked as retained snapshots and one previously presented as a retrievable workflow guide. Their catalogue entries, hashes, citations and source-specific locators are excluded. Remaining source IDs are unchanged to preserve reference stability.
-
-Where the removed material supplied the only canonical outcome definitions, that control is now a Gap. Other affected rows use public guidance only to the extent that its content supports them; several are narrowed to Partial. No replacement taxonomy, identifier scheme or specialist method has been invented. Existing AVMSD records and workflows may still need separate maintenance where they depend on the removed material; this companion document does not modify those files.
-
-The main unresolved dependencies remain national/service applicability and reporting instructions; specialist European-works, broadcast remedies, commercial-content and platform assessments; destination-specific technical methods; detailed AD commentary/editorial methods beyond DF01; and a publicly documented viewer-outcome taxonomy. General guidance must not conceal these gaps.
-
-Checks performed for this revision: repository visibility checked for every retained source; all 12 pinned file links retrieved successfully; affected mappings reconsidered against public guidance; private-source catalogue entries and references removed; all mapping references resolved to the retained catalogue; 45 mapping rows and fit totals checked; all outbound links restricted to `github.com/Double-FW/`. The requirement, guide and workflow identifiers are retained from the supplied matrix; this revision does not repeat the original reconciliation against the complete AVMSD repository, reassess national law, audit every Double-FW repository or independently approve the mapping.
