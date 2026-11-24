@@ -30,3 +30,11 @@ This repository helps Double FW Ltd and authorised collaborators plan audiovisua
 Law, national rules and licence conditions need precise dated provisions. Double-FW production and research material supplies recommended practice; its recommendations do not become EU quotas. Repository rules govern record integrity and automation only after adoption. Interpretations require accountable human review. Synthetic examples and historical sources are excluded from real legal evidence and active requirement retrieval respectively.
 
 For a blocked dependency, record affected action, owner, reason, next evidence and resume condition. Continue independent drafting, inventory or validation; never invent missing national rules, approvals or technical results. The [validation report](control/validation-report.md) separates executed checks from pending legal, editorial, technical and independent evaluation. No repository-wide licence is selected: retain source attribution and confirm reuse rights before redistribution or training.
+
+## About the author
+
+Gareth Ford Williams is a senior leader in accessibility and inclusive design and co-founder of Double FW Ltd. His work spans accessibility, UX, technical standards, assistive technology and inclusive media. At the BBC, he led accessibility and UX work and chaired standards governance, translating research and policy into practical guidance.
+
+## About Double FW Ltd
+
+Double FW Ltd is a UK accessibility and inclusive design consultancy. It helps organisations build accessibility into strategy, governance, brands, products, content and services. Its public repositories provide practical guidance for people and AI-assisted workflows.
